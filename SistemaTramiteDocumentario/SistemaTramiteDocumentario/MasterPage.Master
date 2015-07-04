@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SistemaTramiteDocumentario.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #form1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table style="text-align:center;width:100%" align="center">
+            <tr>
+                <td>
+                    <table style="width:80%">
+                        <tr>
+                            <td colspan="4" style="height: 75px;"><strong>SISTEMA DE TRAMITE DOCUMENTAL</strong></td>
+                        </tr>
+                        <tr style="background-color:grey;height: 40px;">
+                            <td style="width:25%"><asp:LinkButton ID="lbConExp" runat="server" OnClick="lbConExp_Click">Consultar Expediente</asp:LinkButton></td>
+                            <td style="width:25%"><asp:LinkButton ID="lbGenCar" runat="server" OnClick="lbGenCar_Click">Generar Cargo</asp:LinkButton></td>
+                            <td style="width:25%"><asp:LinkButton ID="lbEvaExp" runat="server" OnClick="lbEvaExp_Click">Evaluar Expediente</asp:LinkButton></td>
+                            <td style="width:25%"><asp:LinkButton ID="lbRegUsu" runat="server" OnClick="lbRegUsu_Click">Registrar Usuario</asp:LinkButton></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
