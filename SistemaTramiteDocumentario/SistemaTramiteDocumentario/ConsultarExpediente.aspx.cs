@@ -1,12 +1,11 @@
-﻿using SistemaTramiteDocumentario.Entidad;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SistemaTramiteDocumentario
+namespace STDServices
 {
     public partial class ConsultarExpediente : System.Web.UI.Page
     {

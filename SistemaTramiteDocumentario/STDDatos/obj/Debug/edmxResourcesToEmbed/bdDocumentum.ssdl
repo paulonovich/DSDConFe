@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDDOCUMENTUMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BDDOCUMENTUMModelStoreContainer">
+    <EntitySet Name="Cargo" EntityType="BDDOCUMENTUMModel.Store.Cargo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Expediente" EntityType="BDDOCUMENTUMModel.Store.Expediente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Solicitante" EntityType="BDDOCUMENTUMModel.Store.Solicitante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tramite" EntityType="BDDOCUMENTUMModel.Store.Tramite" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tupa" EntityType="BDDOCUMENTUMModel.Store.Tupa" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Cargo_Expediente" Association="BDDOCUMENTUMModel.Store.FK_Cargo_Expediente">
+      <End Role="Expediente" EntitySet="Expediente" />
+      <End Role="Cargo" EntitySet="Cargo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expediente_Solicitante" Association="BDDOCUMENTUMModel.Store.FK_Expediente_Solicitante">
+      <End Role="Solicitante" EntitySet="Solicitante" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expediente_Tramite" Association="BDDOCUMENTUMModel.Store.FK_Expediente_Tramite">
+      <End Role="Tramite" EntitySet="Tramite" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tupa_Tramite" Association="BDDOCUMENTUMModel.Store.FK_Tupa_Tramite">
+      <End Role="Tramite" EntitySet="Tramite" />
+      <End Role="Tupa" EntitySet="Tupa" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="codigoExpediente" Type="int" />
+    <Property Name="FechaEmision" Type="datetime" />
+    <Property Name="Recepcionista" Type="nvarchar" MaxLength="200" />
+    <Property Name="Solicitante" Type="nvarchar" MaxLength="200" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Expediente">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="codigoSolicitante" Type="int" />
+    <Property Name="codigoTramite" Type="int" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Solicitante">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" MaxLength="200" />
+    <Property Name="apellido" Type="varchar" MaxLength="200" />
+    <Property Name="dni" Type="varchar" MaxLength="8" />
+    <Property Name="telefono" Type="varchar" MaxLength="15" />
+    <Property Name="correo" Type="varchar" MaxLength="200" />
+    <Property Name="direccion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Tramite">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Tupa">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="200" />
+    <Property Name="codigoTramite" Type="int" />
+  </EntityType>
+  <Association Name="FK_Cargo_Expediente">
+    <End Role="Expediente" Type="BDDOCUMENTUMModel.Store.Expediente" Multiplicity="0..1" />
+    <End Role="Cargo" Type="BDDOCUMENTUMModel.Store.Cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expediente">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="Cargo">
+        <PropertyRef Name="codigoExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expediente_Solicitante">
+    <End Role="Solicitante" Type="BDDOCUMENTUMModel.Store.Solicitante" Multiplicity="0..1" />
+    <End Role="Expediente" Type="BDDOCUMENTUMModel.Store.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitante">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="codigoSolicitante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expediente_Tramite">
+    <End Role="Tramite" Type="BDDOCUMENTUMModel.Store.Tramite" Multiplicity="0..1" />
+    <End Role="Expediente" Type="BDDOCUMENTUMModel.Store.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tramite">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="codigoTramite" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tupa_Tramite">
+    <End Role="Tramite" Type="BDDOCUMENTUMModel.Store.Tramite" Multiplicity="0..1" />
+    <End Role="Tupa" Type="BDDOCUMENTUMModel.Store.Tupa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tramite">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="Tupa">
+        <PropertyRef Name="codigoTramite" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

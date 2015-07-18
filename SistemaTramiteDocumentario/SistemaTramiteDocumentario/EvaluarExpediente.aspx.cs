@@ -1,4 +1,4 @@
-﻿using SistemaTramiteDocumentario.Entidad;
+﻿using STDServices.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SistemaTramiteDocumentario
+namespace STDServices
 {
     public partial class EvaluarExpediente : System.Web.UI.Page
     {

@@ -16,22 +16,22 @@ namespace SistemaTramiteDocumentario
 
         protected void lbConExp_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ConsultarExpediente.aspx");
+            Response.Redirect("RegistrarExpediente.aspx");
         }
 
         protected void lbGenCar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GenerarCargo.aspx");
+            //Response.Redirect("GenerarCargo.aspx");
         }
 
         protected void lbEvaExp_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EvaluarExpediente.aspx");
+            //Response.Redirect("EvaluarExpediente.aspx");
         }
 
         protected void lbRegUsu_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegistrarUsuario.aspx");
+            //Response.Redirect("RegistrarUsuario.aspx");
         }
     }
 }

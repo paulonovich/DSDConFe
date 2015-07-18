@@ -1,0 +1,5 @@
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDTest\bin\Debug\STDTest.dll.config
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDTest\bin\Debug\STDTest.dll
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDTest\bin\Debug\STDTest.pdb
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDTest\obj\Debug\STDTest.dll
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDTest\obj\Debug\STDTest.pdb
