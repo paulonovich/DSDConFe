@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="STDServices.TupaService" CodeBehind="TupaService.svc.cs" %>

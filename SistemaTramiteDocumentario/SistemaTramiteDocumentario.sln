@@ -17,6 +17,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STDDatos", "STDDatos\STDDatos.csproj", "{770C7686-234C-4424-9A6B-1D74DC5692BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STDTest", "STDTest\STDTest.csproj", "{1D541EB6-7F5C-40DE-AB64-33592A1EF48F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F20B361-389F-44CB-B40D-990D470E9565} = {5F20B361-389F-44CB-B40D-990D470E9565}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STDNegocio", "STDNegocio\STDNegocio.csproj", "{DEC6FAC9-BCF8-4051-9B08-840DE2929A3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +45,10 @@ Global
 		{1D541EB6-7F5C-40DE-AB64-33592A1EF48F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D541EB6-7F5C-40DE-AB64-33592A1EF48F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D541EB6-7F5C-40DE-AB64-33592A1EF48F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC6FAC9-BCF8-4051-9B08-840DE2929A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC6FAC9-BCF8-4051-9B08-840DE2929A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC6FAC9-BCF8-4051-9B08-840DE2929A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC6FAC9-BCF8-4051-9B08-840DE2929A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

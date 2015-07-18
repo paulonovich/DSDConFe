@@ -29,7 +29,7 @@ namespace STDDatos
                 var vResult = datos.Cargo.ToList();
                 var vMax = 0;
 
-                if (vResult.Count > 0)
+                if (vResult.Count>0)
                 {
                     vMax = vResult.Max(t => t.codigo);
                 }

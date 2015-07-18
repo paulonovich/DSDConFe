@@ -66,9 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CargoService.svc" />
+    <Content Include="TupaService.svc" />
     <Content Include="ExpedienteService.svc" />
     <Content Include="SolicitanteService.svc" />
-    <Content Include="ConsultaService.svc" />
+    <Content Include="TramiteService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,6 +82,9 @@
     <Compile Include="CargoService.svc.cs">
       <DependentUpon>CargoService.svc</DependentUpon>
     </Compile>
+    <Compile Include="TupaService.svc.cs">
+      <DependentUpon>TupaService.svc</DependentUpon>
+    </Compile>
     <Compile Include="IExpediente.cs" />
     <Compile Include="ICargo.cs" />
     <Compile Include="ExpedienteService.svc.cs">
@@ -91,8 +95,8 @@
     </Compile>
     <Compile Include="ISolicitante.cs" />
     <Compile Include="ITupa.cs" />
-    <Compile Include="ConsultaService.svc.cs">
-      <DependentUpon>ConsultaService.svc</DependentUpon>
+    <Compile Include="TramiteService.svc.cs">
+      <DependentUpon>TramiteService.svc</DependentUpon>
     </Compile>
     <Compile Include="ITramite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

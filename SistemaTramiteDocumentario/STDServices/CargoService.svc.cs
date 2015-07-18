@@ -1,65 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
+using STDDatos;
 
-namespace STDDatos
+namespace STDServices
 {
-    public class CargoBl
-    {
-        public List<Cargo> Obtener(int codigoCargo)
+    public class CargoService : ICargo
+    {        
+        public List<Cargo> ObtenerCargo(int codigo)
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Cargo.Where(t => t.codigo == codigoCargo).ToList();
-                return vResult;
+                var lista = new CargoBl().Obtener(codigo);
+                return lista;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new FaultException(ex.Message);
             }
         }
+
+        public bool AgregarCargo(Cargo pCargo)
+        {
+            bool resultado = new CargoBl().Agregar(ref pCargo);
+            return resultado;
+        }
+
 
         public int ObtenerCodigo()
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Cargo.ToList();
-                var vMax = 0;
-
-                if (vResult.Count > 0)
-                {
-                    vMax = vResult.Max(t => t.codigo);
-                }
-                return vMax + 1;
+                var lista = new CargoBl().ObtenerCodigo();
+                return lista;
             }
             catch (Exception ex)
             {
-                throw ex;
-            }
-        }
-
-        public bool Agregar(ref Cargo pCargo)
-        {
-            try
-            {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Cargo.AddObject(pCargo);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                throw new FaultException(ex.Message);
             }
         }
     }

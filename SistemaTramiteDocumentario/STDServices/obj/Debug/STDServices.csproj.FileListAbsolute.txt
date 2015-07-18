@@ -23,3 +23,12 @@ C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STD
 C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices.csprojResolveAssemblyReference.cache
 C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
 C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.pdb
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\Iesi.Collections.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\NHibernate.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.pdb
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using STDServices.SWConsulta;
+using STDServices.SWTramite;
 using STDServices.SWSolicitante;
 using STDServices.SWExpediente;
 
@@ -106,7 +106,7 @@ namespace SistemaTramiteDocumentario
         private void CargarControles()
         {
             TramiteClient tramite = new TramiteClient();
-            List<STDServices.SWConsulta.Tramite> ListaTramite = new List<STDServices.SWConsulta.Tramite>() { new STDServices.SWConsulta.Tramite() { codigo = 0, nombre = "--Seleccione un trámite--" } };
+            List<STDServices.SWTramite.Tramite> ListaTramite = new List<STDServices.SWTramite.Tramite>() { new STDServices.SWTramite.Tramite() { codigo = 0, nombre = "--Seleccione un trámite--" } };
             ListaTramite.AddRange(tramite.ListarTramites());
             this.ddlTramite.DataSource = ListaTramite;
             this.ddlTramite.DataTextField = "nombre";

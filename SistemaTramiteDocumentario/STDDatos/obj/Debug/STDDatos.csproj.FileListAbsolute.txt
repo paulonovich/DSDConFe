@@ -8,3 +8,9 @@ C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STD
 C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
 C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
 C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb

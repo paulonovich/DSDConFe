@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -47,14 +51,85 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service References\WSExpediente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TestExpediente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestTramite.cs" />
+    <Compile Include="Service References\WSSolicitante\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TestSolicitante.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\WSExpediente\ExpedienteService.wsdl" />
+    <None Include="Service References\WSExpediente\ExpedienteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSExpediente\ExpedienteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSExpediente\ExpedienteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSExpediente\STDTest.WSExpediente.Expediente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSSolicitante\SolicitanteService.wsdl" />
+    <None Include="Service References\WSSolicitante\SolicitanteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSSolicitante\SolicitanteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSSolicitante\SolicitanteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSSolicitante\STDTest.WSSolicitante.Solicitante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSExpediente\" />
+    <WCFMetadataStorage Include="Service References\WSSolicitante\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSolicitante\SolicitanteService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSolicitante\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSolicitante\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSolicitante\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSExpediente\ExpedienteService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSExpediente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSExpediente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSExpediente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

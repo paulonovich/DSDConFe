@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/STDDatos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STDDatos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:44593/TupaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfTupa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tupa" nillable="true" type="tns:Tupa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTupa" nillable="true" type="tns:ArrayOfTupa" />
+  <xs:complexType name="Tupa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Tramite" nillable="true" type="tns:Tramite" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoTramite" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Tupa" nillable="true" type="tns:Tupa" />
+  <xs:complexType name="Tramite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:ArrayOfExpediente" />
+      <xs:element minOccurs="0" name="Tupa" nillable="true" type="tns:ArrayOfTupa" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Tramite" nillable="true" type="tns:Tramite" />
+  <xs:complexType name="ArrayOfExpediente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expediente" nillable="true" type="tns:Expediente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpediente" nillable="true" type="tns:ArrayOfExpediente" />
+  <xs:complexType name="Expediente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cargo_1" nillable="true" type="tns:ArrayOfCargo" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Solicitante" nillable="true" type="tns:Solicitante" />
+      <xs:element minOccurs="0" name="Tramite" nillable="true" type="tns:Tramite" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoSolicitante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoTramite" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Expediente" nillable="true" type="tns:Expediente" />
+  <xs:complexType name="ArrayOfCargo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cargo" nillable="true" type="tns:Cargo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCargo" nillable="true" type="tns:ArrayOfCargo" />
+  <xs:complexType name="Cargo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expediente_1" nillable="true" type="tns:Expediente" />
+      <xs:element minOccurs="0" name="FechaEmision" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Recepcionista" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Solicitante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoExpediente" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Cargo" nillable="true" type="tns:Cargo" />
+  <xs:complexType name="Solicitante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:ArrayOfExpediente" />
+      <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Solicitante" nillable="true" type="tns:Solicitante" />
+</xs:schema>

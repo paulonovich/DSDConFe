@@ -16,12 +16,12 @@ namespace STDServices
             bool resultado = new ExpedienteBl().Agregar(ref pExpediente);
             return resultado;
         }
-
+                
         public bool Actualizar(ref Expediente pExpediente)
         {
             throw new NotImplementedException();
         }
-
+        
         public List<Expediente> Obtener(int codigo)
         {
             try

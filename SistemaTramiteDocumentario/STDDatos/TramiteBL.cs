@@ -20,7 +20,7 @@ namespace STDDatos
                 throw ex;
             }
         }
-
+        
         public bool Agregar(ref Tramite pTramite)
         {
             try

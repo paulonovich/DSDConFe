@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDNegocio\bin\Debug\STDNegocio.dll.config
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDNegocio\bin\Debug\STDNegocio.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDNegocio\bin\Debug\STDNegocio.pdb
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDNegocio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDNegocio\obj\Debug\STDNegocio.dll
+C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDNegocio\obj\Debug\STDNegocio.pdb
