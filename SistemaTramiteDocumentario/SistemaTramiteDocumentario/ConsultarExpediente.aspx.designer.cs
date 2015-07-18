@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SistemaTramiteDocumentario {
+namespace STDServices {
     
     
     public partial class ConsultarExpediente {

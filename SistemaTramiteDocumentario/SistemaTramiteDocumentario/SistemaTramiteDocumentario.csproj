@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SistemaTramiteDocumentario</RootNamespace>
+    <RootNamespace>STDServices</RootNamespace>
     <AssemblyName>SistemaTramiteDocumentario</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,30 +59,52 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConsultarCargo.aspx" />
-    <Content Include="ConsultarExpediente.aspx" />
+    <Content Include="RegistrarCargo.aspx" />
     <Content Include="ConsultarTUPA.aspx" />
-    <Content Include="EvaluarExpediente.aspx" />
-    <Content Include="GenerarCargo.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="MantenimientoExpediente.aspx" />
-    <Content Include="RegistrarUsuario.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="obj\Debug\SistemaTramiteDocumentario.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SistemaTramiteDocumentario.dll" />
+    <Content Include="obj\Debug\SistemaTramiteDocumentario.pdb" />
+    <Content Include="RegistrarExpediente.aspx" />
+    <Content Include="RegistrarSolicitante.aspx" />
+    <None Include="Service References\SWCargo\CargoService.disco" />
+    <None Include="Service References\SWCargo\configuration91.svcinfo" />
+    <None Include="Service References\SWCargo\configuration.svcinfo" />
+    <None Include="Service References\SWCargo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SWConsulta\ConsultaService.disco" />
+    <None Include="Service References\SWConsulta\configuration91.svcinfo" />
+    <None Include="Service References\SWConsulta\configuration.svcinfo" />
+    <None Include="Service References\SWConsulta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SWExpediente\ExpedienteService.disco" />
+    <None Include="Service References\SWExpediente\configuration91.svcinfo" />
+    <None Include="Service References\SWExpediente\configuration.svcinfo" />
+    <None Include="Service References\SWExpediente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SWSolicitante\SolicitanteService.disco" />
+    <None Include="Service References\SWSolicitante\configuration91.svcinfo" />
+    <None Include="Service References\SWSolicitante\configuration.svcinfo" />
+    <None Include="Service References\SWSolicitante\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultarCargo.aspx.cs">
-      <DependentUpon>ConsultarCargo.aspx</DependentUpon>
+    <Compile Include="RegistrarCargo.aspx.cs">
+      <DependentUpon>RegistrarCargo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultarCargo.aspx.designer.cs">
-      <DependentUpon>ConsultarCargo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ConsultarExpediente.aspx.cs">
-      <DependentUpon>ConsultarExpediente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultarExpediente.aspx.designer.cs">
-      <DependentUpon>ConsultarExpediente.aspx</DependentUpon>
+    <Compile Include="RegistrarCargo.aspx.designer.cs">
+      <DependentUpon>RegistrarCargo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultarTUPA.aspx.cs">
       <DependentUpon>ConsultarTUPA.aspx</DependentUpon>
@@ -89,35 +113,12 @@
     <Compile Include="ConsultarTUPA.aspx.designer.cs">
       <DependentUpon>ConsultarTUPA.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entidad\Listado.cs" />
-    <Compile Include="Entidad\Expediente.cs" />
-    <Compile Include="EvaluarExpediente.aspx.cs">
-      <DependentUpon>EvaluarExpediente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EvaluarExpediente.aspx.designer.cs">
-      <DependentUpon>EvaluarExpediente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GenerarCargo.aspx.cs">
-      <DependentUpon>GenerarCargo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GenerarCargo.aspx.designer.cs">
-      <DependentUpon>GenerarCargo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MantenimientoExpediente.aspx.cs">
-      <DependentUpon>MantenimientoExpediente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MantenimientoExpediente.aspx.designer.cs">
-      <DependentUpon>MantenimientoExpediente.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -127,16 +128,99 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrarUsuario.aspx.cs">
-      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    <Compile Include="RegistrarExpediente.aspx.cs">
+      <DependentUpon>RegistrarExpediente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegistrarUsuario.aspx.designer.cs">
-      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    <Compile Include="RegistrarExpediente.aspx.designer.cs">
+      <DependentUpon>RegistrarExpediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarSolicitante.aspx.cs">
+      <DependentUpon>RegistrarSolicitante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarSolicitante.aspx.designer.cs">
+      <DependentUpon>RegistrarSolicitante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SWCargo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SWConsulta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SWExpediente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SWSolicitante\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MasterPage.Master" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\SistemaTramiteDocumentario.csprojResolveAssemblyReference.cache" />
+    <None Include="Service References\SWCargo\CargoService.wsdl" />
+    <None Include="Service References\SWCargo\CargoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWCargo\CargoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWCargo\CargoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWCargo\STDServices.SWCargo.Cargo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SWConsulta\ConsultaService.wsdl" />
+    <None Include="Service References\SWConsulta\ConsultaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWConsulta\ConsultaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWConsulta\ConsultaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWConsulta\STDServices.SWConsulta.Tramite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SWConsulta\STDServices.SWConsulta.Tupa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SWExpediente\ExpedienteService.wsdl" />
+    <None Include="Service References\SWExpediente\ExpedienteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWExpediente\ExpedienteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWExpediente\ExpedienteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWExpediente\STDServices.SWExpediente.Expediente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SWSolicitante\SolicitanteService.wsdl" />
+    <None Include="Service References\SWSolicitante\SolicitanteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWSolicitante\SolicitanteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWSolicitante\SolicitanteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWSolicitante\STDServices.SWSolicitante.Solicitante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +231,16 @@
   <ItemGroup>
     <Folder Include="CSS\" />
     <Folder Include="JS\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SWCargo\" />
+    <WCFMetadataStorage Include="Service References\SWConsulta\" />
+    <WCFMetadataStorage Include="Service References\SWExpediente\" />
+    <WCFMetadataStorage Include="Service References\SWSolicitante\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -159,11 +253,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>43848</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3779/</IISUrl>
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

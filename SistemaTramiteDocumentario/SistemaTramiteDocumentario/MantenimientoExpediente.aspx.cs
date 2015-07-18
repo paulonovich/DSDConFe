@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SistemaTramiteDocumentario
+namespace STDServices
 {
     public partial class MantenimientoExpediente : System.Web.UI.Page
     {

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="STDServices.SConsuta" CodeBehind="SConsulta.svc.cs" %>

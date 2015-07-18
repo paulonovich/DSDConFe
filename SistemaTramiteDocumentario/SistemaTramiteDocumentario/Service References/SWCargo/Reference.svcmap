@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e93b1684-c18e-4343-87a2-b76f8147d5ed" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44593/CargoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CargoService.xsd" MetadataType="Schema" ID="4788ad77-984e-43f9-8d7e-f52e21df5d4b" SourceId="1" SourceUrl="http://localhost:44593/CargoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CargoService1.xsd" MetadataType="Schema" ID="5d42c4d3-ac5a-4b24-a72d-57844d01ad1c" SourceId="1" SourceUrl="http://localhost:44593/CargoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CargoService.wsdl" MetadataType="Wsdl" ID="81f1b620-1e30-4f14-8070-619c0f230a80" SourceId="1" SourceUrl="http://localhost:44593/CargoService.svc?wsdl" />
+    <MetadataFile FileName="CargoService.disco" MetadataType="Disco" ID="edf6f244-c960-41a7-bdc7-97592cb6c4da" SourceId="1" SourceUrl="http://localhost:44593/CargoService.svc?disco" />
+    <MetadataFile FileName="CargoService2.xsd" MetadataType="Schema" ID="910cb08d-7a39-4b5f-a5b1-9172768aef59" SourceId="1" SourceUrl="http://localhost:44593/CargoService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

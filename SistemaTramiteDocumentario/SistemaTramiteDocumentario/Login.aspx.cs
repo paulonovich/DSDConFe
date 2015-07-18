@@ -16,7 +16,7 @@ namespace SistemaTramiteDocumentario
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ConsultarExpediente.aspx");
+            Response.Redirect("RegistrarExpediente.aspx");
         }
     }
 }

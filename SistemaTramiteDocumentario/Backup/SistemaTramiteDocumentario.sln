@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaTramiteDocumentario", "SistemaTramiteDocumentario\SistemaTramiteDocumentario.csproj", "{2B6A40B8-D326-4F59-B99B-6E3908D08B14}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F20B361-389F-44CB-B40D-990D470E9565} = {5F20B361-389F-44CB-B40D-990D470E9565}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{D0D8D9A4-4B90-4B71-9946-BA5868CCBF44}"
+	ProjectSection(SolutionItems) = preProject
+		Librerias\Iesi.Collections.dll = Librerias\Iesi.Collections.dll
+		Librerias\NHibernate.dll = Librerias\NHibernate.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STDServices", "STDServices\STDServices.csproj", "{5F20B361-389F-44CB-B40D-990D470E9565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STDDatos", "STDDatos\STDDatos.csproj", "{770C7686-234C-4424-9A6B-1D74DC5692BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B6A40B8-D326-4F59-B99B-6E3908D08B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B6A40B8-D326-4F59-B99B-6E3908D08B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B6A40B8-D326-4F59-B99B-6E3908D08B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6A40B8-D326-4F59-B99B-6E3908D08B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F20B361-389F-44CB-B40D-990D470E9565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F20B361-389F-44CB-B40D-990D470E9565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F20B361-389F-44CB-B40D-990D470E9565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F20B361-389F-44CB-B40D-990D470E9565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{770C7686-234C-4424-9A6B-1D74DC5692BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770C7686-234C-4424-9A6B-1D74DC5692BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770C7686-234C-4424-9A6B-1D74DC5692BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770C7686-234C-4424-9A6B-1D74DC5692BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

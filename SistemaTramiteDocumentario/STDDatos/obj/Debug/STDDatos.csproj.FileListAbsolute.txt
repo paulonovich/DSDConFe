@@ -1,0 +1,10 @@
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
