@@ -3,14 +3,19 @@ C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario
 C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
 C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
 C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll.config
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\obj\Debug\STDDatos.pdb

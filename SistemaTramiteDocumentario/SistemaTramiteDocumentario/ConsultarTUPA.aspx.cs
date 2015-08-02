@@ -4,27 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using STDServices.SWTupa;
+using STDDatos;
+using STDNegocio;
 
 namespace SistemaTramiteDocumentario
 {
     public partial class ConsultarTUPA : System.Web.UI.Page
     {
-        private List<Tupa> ListaTupa
-        {
-            get
-            {
-                if (ViewState["ListaTupa"] != null)
-                    return (List<Tupa>)ViewState["ListaTupa"];
-                else
-                    return null;
-            }
-            set
-            {
-                ViewState["ListaTupa"] = value;
-            }
-        }
-
         private int codigoTramite
         {
             get
@@ -52,17 +38,27 @@ namespace SistemaTramiteDocumentario
         {
             try
             {
-                gvTUPA.Visible = true;
-                TupaClient tupa = new TupaClient();
+                TupaNeg tupaNegocio = new TupaNeg();
+                String mensaje = "";
                 if (Session["codigoTramite"] != null)
                 {
                     codigoTramite = Convert.ToInt32(Session["codigoTramite"]);
-                    ListaTupa = new List<Tupa>();
-                    ListaTupa.AddRange(tupa.ListarTupa(codigoTramite));
-                    this.gvTUPA.DataSource = ListaTupa;
-                    this.gvTUPA.DataBind();
+                    List<Tupa> ListaTupa = new List<Tupa>();
+                    ListaTupa.AddRange(tupaNegocio.ObtenerTupa(codigoTramite, ref mensaje));
+                    if (mensaje.Equals(""))
+                    {
+                        this.gvTUPA.Visible = true;
+                        this.gvTUPA.DataSource = ListaTupa;
+                        this.gvTUPA.DataBind();
+                    }
+                    else
+                    {
+                        this.gvTUPA.Visible = false;
+                        lblError.Text = mensaje;
+                    }
                 }
-                else { 
+                else
+                {
                     gvTUPA.Visible = false;
                     lblError.Text = "No hay un código de trámite activo.";
                 }
@@ -72,8 +68,8 @@ namespace SistemaTramiteDocumentario
                 gvTUPA.Visible = false;
                 lblError.Text = ex.ToString();
             }
-        }        
-        
+        }
+
         protected void btnContinuar_Click(object sender, EventArgs e)
         {
             bool verificaCheckBox = false;

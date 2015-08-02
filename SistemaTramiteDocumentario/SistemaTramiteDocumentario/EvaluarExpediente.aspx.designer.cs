@@ -7,46 +7,73 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace STDServices {
+namespace SistemaTramiteDocumentario {
     
     
     public partial class EvaluarExpediente {
         
         /// <summary>
-        /// Control lblTitulo.
+        /// Control gvExpediente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        protected global::System.Web.UI.WebControls.GridView gvExpediente;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// Control btnValidar.
+        /// Control hdCodigo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnValidar;
+        protected global::System.Web.UI.WebControls.HiddenField hdCodigo;
         
         /// <summary>
-        /// Control btnConsultarExpediente.
+        /// Control btnEvaluar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConsultarExpediente;
+        protected global::System.Web.UI.WebControls.Button btnEvaluar;
+        
+        /// <summary>
+        /// Control trPregunta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trPregunta;
+        
+        /// <summary>
+        /// Control lblTexto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTexto;
+        
+        /// <summary>
+        /// Control trOpcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trOpcion;
         
         /// <summary>
         /// Control btnAprobar.
@@ -58,12 +85,12 @@ namespace STDServices {
         protected global::System.Web.UI.WebControls.Button btnAprobar;
         
         /// <summary>
-        /// Control btnRechazar.
+        /// Control btnCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRechazar;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

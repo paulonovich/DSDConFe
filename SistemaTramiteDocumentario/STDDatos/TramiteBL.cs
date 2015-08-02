@@ -7,7 +7,7 @@ namespace STDDatos
 {
     public class TramiteBl
     {
-        public List<Tramite> Obtener()
+        public List<Tramite> Listar()
         {
             try
             {

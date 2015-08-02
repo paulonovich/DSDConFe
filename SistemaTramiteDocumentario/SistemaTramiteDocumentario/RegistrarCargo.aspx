@@ -47,8 +47,9 @@
                             <td>
                                 <asp:DropDownList ID="ddlEstado" runat="server" Width="150px" 
                                     AutoPostBack="True">
-                                    <asp:ListItem>Activo</asp:ListItem>
-                                    <asp:ListItem>Inactivo</asp:ListItem>
+                                    <asp:ListItem>En proceso</asp:ListItem>
+                                    <asp:ListItem>Cancelado</asp:ListItem>
+                                    <asp:ListItem>Aprobado</asp:ListItem>
                                 </asp:DropDownList></td>
                             <td></td>
                         </tr>

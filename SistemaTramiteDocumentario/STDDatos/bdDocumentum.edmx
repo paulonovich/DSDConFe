@@ -11,6 +11,15 @@
           <EntitySet Name="Solicitante" EntityType="BDDOCUMENTUMModel.Store.Solicitante" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tramite" EntityType="BDDOCUMENTUMModel.Store.Tramite" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tupa" EntityType="BDDOCUMENTUMModel.Store.Tupa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Evaluacion" EntityType="BDDOCUMENTUMModel.Store.Evaluacion" store:Type="Views" store:Schema="dbo" store:Name="Evaluacion">
+            <DefiningQuery>SELECT 
+      [Evaluacion].[codigoExpediente] AS [codigoExpediente], 
+      [Evaluacion].[Tramite] AS [Tramite], 
+      [Evaluacion].[Solicitante] AS [Solicitante], 
+      [Evaluacion].[Recepcionista] AS [Recepcionista], 
+      [Evaluacion].[Estado] AS [Estado]
+      FROM [dbo].[Evaluacion] AS [Evaluacion]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Cargo_Expediente" Association="BDDOCUMENTUMModel.Store.FK_Cargo_Expediente">
             <End Role="Expediente" EntitySet="Expediente" />
             <End Role="Cargo" EntitySet="Cargo" />
@@ -74,6 +83,19 @@
           <Property Name="codigo" Type="int" Nullable="false" />
           <Property Name="nombre" Type="nvarchar" MaxLength="200" />
           <Property Name="codigoTramite" Type="int" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'BDDOCUMENTUM.dbo.Evaluacion' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+        <EntityType Name="Evaluacion">
+          <Key>
+            <PropertyRef Name="codigoExpediente" />
+          </Key>
+          <Property Name="codigoExpediente" Type="int" Nullable="false" />
+          <Property Name="Tramite" Type="nvarchar" MaxLength="200" />
+          <Property Name="Solicitante" Type="varchar" MaxLength="401" />
+          <Property Name="Recepcionista" Type="nvarchar" MaxLength="200" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <Association Name="FK_Cargo_Expediente">
           <End Role="Expediente" Type="BDDOCUMENTUMModel.Store.Expediente" Multiplicity="0..1" />
@@ -149,6 +171,7 @@
             <End Role="Expediente" EntitySet="Expediente" />
             <End Role="Cargo" EntitySet="Cargo" />
           </AssociationSet>
+          <EntitySet Name="Evaluacion" EntityType="BDDOCUMENTUMModel.Evaluacion" />
         </EntityContainer>
         <EntityType Name="Tramite">
           <Key>
@@ -253,6 +276,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Evaluacion">
+          <Key>
+            <PropertyRef Name="codigoExpediente" />
+          </Key>
+          <Property Type="Int32" Name="codigoExpediente" Nullable="false" />
+          <Property Type="String" Name="Tramite" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Solicitante" MaxLength="401" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Estado" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Recepcionista" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -311,6 +344,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Evaluacion">
+            <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Evaluacion">
+              <MappingFragment StoreEntitySet="Evaluacion">
+                <ScalarProperty Name="Recepcionista" ColumnName="Recepcionista" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Solicitante" ColumnName="Solicitante" />
+                <ScalarProperty Name="Tramite" ColumnName="Tramite" />
+                <ScalarProperty Name="codigoExpediente" ColumnName="codigoExpediente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -332,29 +376,30 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="bdDocumentum">
-        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Tramite" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Tupa" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Solicitante" Width="1.5" PointX="4.75" PointY="0.75" Height="2.3648893229166656" />
-        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Cargo" Width="1.5" PointX="6.75" PointY="0.75" Height="2.364889322916667" />
-        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Expediente" Width="1.5" PointX="4.75" PointY="3.625" Height="2.364889322916667" />
+      <Diagram Name="bdDocumentum" ZoomLevel="74">
+        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Tramite" Width="1.5" PointX="0.5" PointY="2.875" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Tupa" Width="1.5" PointX="0.5" PointY="0.5" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Solicitante" Width="1.5" PointX="5.125" PointY="0.5" Height="2.5571907552083331" />
+        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Cargo" Width="1.5" PointX="5.125" PointY="3.25" Height="2.364889322916667" />
+        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Expediente" Width="1.5" PointX="2.625" PointY="2.875" Height="2.364889322916667" />
         <AssociationConnector Association="BDDOCUMENTUMModel.FK_Expediente_Solicitante" >
-          <ConnectorPoint PointX="5.5" PointY="3.3071907552083331" />
-          <ConnectorPoint PointX="5.5" PointY="3.625" />
+          <ConnectorPoint PointX="5.125" PointY="1.6874995" />
+          <ConnectorPoint PointX="3.375" PointY="1.6874995" />
+          <ConnectorPoint PointX="3.375" PointY="2.875" />
         </AssociationConnector>
         <AssociationConnector Association="BDDOCUMENTUMModel.FK_Expediente_Tramite" >
-          <ConnectorPoint PointX="1.5" PointY="2.5379850260416665" />
-          <ConnectorPoint PointX="1.5" PointY="4.8074446614583337" />
-          <ConnectorPoint PointX="4.75" PointY="4.8074446614583337" />
+          <ConnectorPoint PointX="2" PointY="3.7689925130208333" />
+          <ConnectorPoint PointX="2.625" PointY="3.7689925130208333" />
         </AssociationConnector>
         <AssociationConnector Association="BDDOCUMENTUMModel.FK_Tupa_Tramite" >
-          <ConnectorPoint PointX="2.25" PointY="1.6127400130208334" />
-          <ConnectorPoint PointX="2.75" PointY="1.6127400130208334" />
+          <ConnectorPoint PointX="1.25" PointY="2.875" />
+          <ConnectorPoint PointX="1.25" PointY="2.287985026041667" />
         </AssociationConnector>
         <AssociationConnector Association="BDDOCUMENTUMModel.FK_Cargo_Expediente" >
-          <ConnectorPoint PointX="6.25" PointY="3.625" />
-          <ConnectorPoint PointX="6.75" PointY="3.114889322916667" />
+          <ConnectorPoint PointX="4.125" PointY="4.2449446614583337" />
+          <ConnectorPoint PointX="5.125" PointY="4.2449446614583337" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="BDDOCUMENTUMModel.Evaluacion" Width="1.5" PointX="7" PointY="0.5" Height="1.7879850260416674" />
       </Diagram>
     </Diagrams>
   </Designer>

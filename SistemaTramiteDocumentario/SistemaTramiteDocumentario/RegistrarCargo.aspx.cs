@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using STDServices.SWCargo;
+using STDDatos;
+using STDNegocio;
 
 namespace SistemaTramiteDocumentario
 {
@@ -69,67 +70,62 @@ namespace SistemaTramiteDocumentario
                 ViewState["codigoExpediente"] = value;
             }
         }
-        
-        private Cargo cargo
-        {
-            get
-            {
-                if (ViewState["Cargo"] != null)
-                    return (Cargo)ViewState["Cargo"];
-                else
-                    return null;
-            }
-            set
-            {
-                ViewState["Cargo"] = value;
-            }
-        }
-
-
+                
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                CargoClient cargo = new CargoClient();
+                CargoNeg cargoNegocio = new CargoNeg();
+                String mensaje = "";
                 codigoTramite = Convert.ToInt32(Session["codigoTramite"]);
                 codigoSolicitante = Convert.ToInt32(Session["codigoSolicitante"]);
                 codigoExpediente = Convert.ToInt32(Session["codigoExpediente"]);
-                codigoCargo = cargo.ObtenerCodigo();
+                codigoCargo = cargoNegocio.ObtenerNuevoCodigo(ref mensaje);
 
-                txtId.Text = codigoCargo.ToString();
-                txtCodigoExp.Text = codigoExpediente.ToString();
-                txtFechaEmision.Text = DateTime.Today.ToShortDateString();
+                if (mensaje == "")
+                {
+                    Bloquear(false);
+                    txtId.Text = codigoCargo.ToString();
+                    txtCodigoExp.Text = codigoExpediente.ToString();
+                    txtFechaEmision.Text = DateTime.Today.ToShortDateString();
+                }
+                else
+                {
+                    lblMensaje.Text = mensaje;
+                    Bloquear(true);
+                }
             }
+        }
+
+        private void Bloquear(bool bEstado)
+        {
+            txtCodigoExp.Enabled = !bEstado;
+            txtFechaEmision.Enabled = !bEstado;
+            txtRecepcionista.Enabled = !bEstado;
+            txtSolicitante.Enabled = !bEstado;
+            ddlEstado.Enabled = !bEstado;
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             try
             {
-                cargo = new Cargo();
+                CargoNeg cargoNegocio = new CargoNeg();
+                String mensaje = "";
+                Cargo cargo = new Cargo();
                 cargo.codigo = codigoCargo;
                 cargo.codigoExpediente = codigoExpediente;
-                cargo.FechaEmision=DateTime.Today;
-                cargo.Recepcionista=txtRecepcionista.Text;
-                cargo.Solicitante=txtSolicitante.Text;
+                cargo.FechaEmision = DateTime.Today;
+                cargo.Recepcionista = txtRecepcionista.Text;
+                cargo.Solicitante = txtSolicitante.Text;
                 cargo.Estado = ddlEstado.Text;
-                
-                CargoClient cargoClient = new CargoClient();
-                bool resultado = false;
-                resultado = cargoClient.AgregarCargo(cargo);
-                if (resultado)
-                {
-                    lblMensaje.Text = "Cargo registrado.";
-                }
-                else
-                {
-                    lblMensaje.Text = "Ocurrio un error al registrar el cargo.";
-                }
+                cargoNegocio.AgregarCargo(cargo, ref mensaje);
+                lblMensaje.Text = mensaje;
             }
             catch (Exception ex)
             {
                 lblMensaje.Text = ex.ToString();
-            } 
+            }
         }
     }
 }

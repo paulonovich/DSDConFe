@@ -21,7 +21,7 @@ namespace STDDatos
             }
         }
 
-        public int ObtenerCodigo()
+        public int ObtenerValorAutogenerado()
         {
             try
             {

@@ -13,13 +13,10 @@ namespace STDServices
     public interface IExpediente
     {
         [OperationContract]
-        bool Agregar(ref Expediente pExpediente);
+        bool AgregarExpediente(ref Expediente pExpediente);
 
         [OperationContract]
-        bool Actualizar(ref Expediente pExpediente);
-
-        [OperationContract]
-        List<Expediente> Obtener(int codigo);
+        List<Expediente> ObtenerExpediente(int codigo);
 
     }
 }

@@ -6,6 +6,15 @@
     <EntitySet Name="Solicitante" EntityType="BDDOCUMENTUMModel.Store.Solicitante" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tramite" EntityType="BDDOCUMENTUMModel.Store.Tramite" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tupa" EntityType="BDDOCUMENTUMModel.Store.Tupa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Evaluacion" EntityType="BDDOCUMENTUMModel.Store.Evaluacion" store:Type="Views" store:Schema="dbo" store:Name="Evaluacion">
+      <DefiningQuery>SELECT 
+      [Evaluacion].[codigoExpediente] AS [codigoExpediente], 
+      [Evaluacion].[Tramite] AS [Tramite], 
+      [Evaluacion].[Solicitante] AS [Solicitante], 
+      [Evaluacion].[Recepcionista] AS [Recepcionista], 
+      [Evaluacion].[Estado] AS [Estado]
+      FROM [dbo].[Evaluacion] AS [Evaluacion]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Cargo_Expediente" Association="BDDOCUMENTUMModel.Store.FK_Cargo_Expediente">
       <End Role="Expediente" EntitySet="Expediente" />
       <End Role="Cargo" EntitySet="Cargo" />
@@ -69,6 +78,19 @@
     <Property Name="codigo" Type="int" Nullable="false" />
     <Property Name="nombre" Type="nvarchar" MaxLength="200" />
     <Property Name="codigoTramite" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'BDDOCUMENTUM.dbo.Evaluacion' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Evaluacion">
+    <Key>
+      <PropertyRef Name="codigoExpediente" />
+    </Key>
+    <Property Name="codigoExpediente" Type="int" Nullable="false" />
+    <Property Name="Tramite" Type="nvarchar" MaxLength="200" />
+    <Property Name="Solicitante" Type="varchar" MaxLength="401" />
+    <Property Name="Recepcionista" Type="nvarchar" MaxLength="200" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="200" />
   </EntityType>
   <Association Name="FK_Cargo_Expediente">
     <End Role="Expediente" Type="BDDOCUMENTUMModel.Store.Expediente" Multiplicity="0..1" />

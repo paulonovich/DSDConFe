@@ -5,17 +5,16 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using STDDatos;
 
 namespace STDServices
 {
     public class CargoService : ICargo
-    {        
-        public List<Cargo> ObtenerCargo(int codigo)
+    {
+        public List<STDDatos.Cargo> ObtenerCargo(int codigo)
         {
             try
             {
-                var lista = new CargoBl().Obtener(codigo);
+                List<STDDatos.Cargo> lista = new STDDatos.CargoBl().Obtener(codigo);
                 return lista;
             }
             catch (Exception ex)
@@ -24,18 +23,18 @@ namespace STDServices
             }
         }
 
-        public bool AgregarCargo(Cargo pCargo)
+        public bool AgregarCargo(STDDatos.Cargo pCargo)
         {
-            bool resultado = new CargoBl().Agregar(ref pCargo);
+            bool resultado = new STDDatos.CargoBl().Agregar(ref pCargo);
             return resultado;
         }
 
 
-        public int ObtenerCodigo()
+        public int ObtenerNuevoCodigo()
         {
             try
             {
-                var lista = new CargoBl().ObtenerCodigo();
+                var lista = new STDDatos.CargoBl().ObtenerValorAutogenerado();
                 return lista;
             }
             catch (Exception ex)

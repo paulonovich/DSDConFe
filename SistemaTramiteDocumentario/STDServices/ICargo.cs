@@ -16,7 +16,7 @@ namespace STDServices
         List<Cargo> ObtenerCargo(int codigo);
 
         [OperationContract]
-        int ObtenerCodigo();
+        int ObtenerNuevoCodigo();
 
         [OperationContract]
         bool AgregarCargo(Cargo pCargo);

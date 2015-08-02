@@ -16,6 +16,7 @@ namespace STDDatos
                 var vResult = datos.SaveChanges();
                 if (vResult > 0)
                 {
+                    pExpediente.codigo = vResult;
                     return true;
                 }
                 else

@@ -1,0 +1,14 @@
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\obj\Debug\STDRest.csprojResolveAssemblyReference.cache
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDRest.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDRest.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\obj\Debug\STDRest.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\obj\Debug\STDRest.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDRest.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDRest.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDDatos.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\bin\STDDatos.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\obj\Debug\STDRest.csprojResolveAssemblyReference.cache
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\obj\Debug\STDRest.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDRest\obj\Debug\STDRest.pdb

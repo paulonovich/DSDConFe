@@ -71,6 +71,12 @@ namespace STDDatos
             get { return _expediente  ?? (_expediente = CreateObjectSet<Expediente>("Expediente")); }
         }
         private ObjectSet<Expediente> _expediente;
+    
+        public ObjectSet<Evaluacion> Evaluacion
+        {
+            get { return _evaluacion  ?? (_evaluacion = CreateObjectSet<Evaluacion>("Evaluacion")); }
+        }
+        private ObjectSet<Evaluacion> _evaluacion;
 
         #endregion
     }

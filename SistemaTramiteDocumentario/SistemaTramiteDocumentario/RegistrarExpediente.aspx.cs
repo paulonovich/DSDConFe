@@ -4,9 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using STDServices.SWTramite;
-using STDServices.SWSolicitante;
-using STDServices.SWExpediente;
+using STDDatos;
+using STDNegocio;
 
 namespace SistemaTramiteDocumentario
 {
@@ -42,51 +41,46 @@ namespace SistemaTramiteDocumentario
             }
         }
 
-        private List<STDServices.SWSolicitante.Solicitante> ListaSolicitante
-        {
-            get
-            {
-                if (ViewState["ListaSolicitante"] != null)
-                    return (List<STDServices.SWSolicitante.Solicitante>)ViewState["ListaSolicitante"];
-                else
-                    return null;
-            }
-            set
-            {
-                ViewState["ListaSolicitante"] = value;
-            }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                CargarControles();
                 if (Session["codigoTramite"] != null && Session["codigoSolicitante"] != null)
                 {
+                    SolicitanteNeg solicitanteNegocio = new SolicitanteNeg();
+                    List<Solicitante> ListaSolicitante = new List<Solicitante>();
+                    String mensaje = "";
                     codigoTramite = Convert.ToInt32(Session["codigoTramite"]);
                     codigoSolicitante = Convert.ToInt32(Session["codigoSolicitante"]);
 
-                    SolicitanteClient solicitante = new SolicitanteClient();
-                    ListaSolicitante = solicitante.ObtenerSolicitante(codigoSolicitante);
+                    ListaSolicitante = solicitanteNegocio.ObtenerSolicitante(codigoSolicitante, ref mensaje);
 
-                    gvSolicitante.Visible = true;
-                    btnGenerarCargo.Visible = true;
-                    btnConsultarTUPA.Enabled = false;
-                    gvSolicitante.DataSource = ListaSolicitante;
-                    gvSolicitante.DataBind();
+                    if (mensaje.Equals(""))
+                    {
+                        gvSolicitante.DataSource = ListaSolicitante;
+                        gvSolicitante.DataBind();
+                        ddlTramite.SelectedValue = codigoTramite.ToString();
+                        Bloquear(false);
+                    }
+                    else
+                    {
+                        lblError.Text = mensaje;
+                        Bloquear(true);
+                    }
 
-                    ddlTramite.SelectedValue = codigoTramite.ToString();
-                    ddlTramite.Enabled = false;
                 }
                 else
                 {
-                    gvSolicitante.Visible = false;
-                    btnGenerarCargo.Visible = false;
-                    btnConsultarTUPA.Enabled = true;
-                    ddlTramite.Enabled = true;
+                    Bloquear(true);
                 }
-                CargarControles();
             }
+        }
+
+        private void Bloquear(bool valor)
+        {
+            gvSolicitante.Visible = !valor;
+            btnGenerarCargo.Visible = !valor;
         }
 
         protected void btnConsultarTUPA_Click(object sender, EventArgs e)
@@ -105,14 +99,23 @@ namespace SistemaTramiteDocumentario
 
         private void CargarControles()
         {
-            TramiteClient tramite = new TramiteClient();
-            List<STDServices.SWTramite.Tramite> ListaTramite = new List<STDServices.SWTramite.Tramite>() { new STDServices.SWTramite.Tramite() { codigo = 0, nombre = "--Seleccione un trámite--" } };
-            ListaTramite.AddRange(tramite.ListarTramites());
-            this.ddlTramite.DataSource = ListaTramite;
-            this.ddlTramite.DataTextField = "nombre";
-            this.ddlTramite.DataValueField = "codigo";
-            this.ddlTramite.DataBind();
-            this.ddlTramite.SelectedValue = "0";
+            TramiteNeg tramiteNegocio = new TramiteNeg();
+            String mensaje = "";
+            List<Tramite> ListaTramite = new List<Tramite>() { new Tramite() { codigo = 0, nombre = "--Seleccione un trámite--" } };
+            List<Tramite> ListaAux = tramiteNegocio.ListarTramites(ref mensaje);
+            if (mensaje.Equals(""))
+            {
+                ListaTramite.AddRange(ListaAux);
+                this.ddlTramite.DataSource = ListaTramite;
+                this.ddlTramite.DataTextField = "nombre";
+                this.ddlTramite.DataValueField = "codigo";
+                this.ddlTramite.DataBind();
+                this.ddlTramite.SelectedValue = "0";
+            }
+            else
+            {
+                lblErrorCarga.Text = mensaje;
+            }
         }
 
         protected void btnGenerarCargo_Click(object sender, EventArgs e)
@@ -120,22 +123,24 @@ namespace SistemaTramiteDocumentario
             Session["codigoTramite"] = codigoTramite;
             Session["codigoSolicitante"] = codigoSolicitante;
 
-            ExpedienteClient expediente = new ExpedienteClient();
-            STDServices.SWExpediente.Expediente eExpediente = new STDServices.SWExpediente.Expediente();
+            ExpedienteNeg expedienteNegocio = new ExpedienteNeg();
+            String mensaje = "";
+            int codigo = 0;
+            Expediente eExpediente = new Expediente();
             eExpediente.codigo = 1;
             eExpediente.codigoSolicitante = codigoSolicitante;
             eExpediente.codigoTramite = codigoTramite;
             eExpediente.Estado = 1;
-            bool resultado = expediente.Agregar(ref eExpediente);
+            expedienteNegocio.AgregarExpediente(eExpediente, ref mensaje, ref codigo);
 
-            if (resultado)
+            if (codigo > 0)
             {
                 Session["codigoExpediente"] = eExpediente.codigo;
                 Response.Redirect("RegistrarCargo.aspx");
             }
             else
             {
-                lblError.Text = "Hubo un error al registrar el expediente.";
+                lblError.Text = mensaje;
             }
         }
     }

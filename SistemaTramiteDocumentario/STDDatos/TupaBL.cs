@@ -7,7 +7,7 @@ namespace STDDatos
 {
     public class TupaBl
     {
-        public List<Tupa> ObtenerTupa(int codigoTramite)
+        public List<Tupa> Obtener(int codigoTramite)
         {
             try
             {

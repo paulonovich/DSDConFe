@@ -63,6 +63,10 @@
       <DependentUpon>bdDocumentum.tt</DependentUpon>
     </Compile>
     <Compile Include="CargoBL.cs" />
+    <Compile Include="EvaluacionBL.cs" />
+    <Compile Include="Evaluacion.cs">
+      <DependentUpon>bdDocumentum.tt</DependentUpon>
+    </Compile>
     <Compile Include="ExpedienteBL.cs" />
     <Compile Include="TupaBL.cs" />
     <Compile Include="Expediente.cs">

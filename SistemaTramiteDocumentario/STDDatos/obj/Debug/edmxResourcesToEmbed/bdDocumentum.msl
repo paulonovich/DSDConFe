@@ -53,5 +53,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Evaluacion">
+      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Evaluacion">
+        <MappingFragment StoreEntitySet="Evaluacion">
+          <ScalarProperty Name="Recepcionista" ColumnName="Recepcionista" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Solicitante" ColumnName="Solicitante" />
+          <ScalarProperty Name="Tramite" ColumnName="Tramite" />
+          <ScalarProperty Name="codigoExpediente" ColumnName="codigoExpediente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

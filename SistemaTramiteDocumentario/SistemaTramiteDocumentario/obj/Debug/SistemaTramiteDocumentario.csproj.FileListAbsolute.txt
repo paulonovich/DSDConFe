@@ -22,3 +22,17 @@ C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocument
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\SistemaTramiteDocumentario.dll
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\SistemaTramiteDocumentario.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\SistemaTramiteDocumentario.csprojResolveAssemblyReference.cache
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDNegocio.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDNegocio.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\SistemaTramiteDocumentario.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\SistemaTramiteDocumentario.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDDatos.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDNegocio.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDDatos.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\bin\STDNegocio.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\SistemaTramiteDocumentario.csprojResolveAssemblyReference.cache
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\SistemaTramiteDocumentario.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\SistemaTramiteDocumentario\obj\Debug\SistemaTramiteDocumentario.pdb

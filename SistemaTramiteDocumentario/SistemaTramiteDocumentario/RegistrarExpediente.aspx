@@ -22,6 +22,7 @@
                         </tr>
                         <tr>
                             <td colspan="4" style="text-align:center;">
+                                <asp:Label ID="lblErrorCarga" runat="server" Text="" ForeColor="Red"></asp:Label>
                             </td>
                         </tr>
                         <tr>

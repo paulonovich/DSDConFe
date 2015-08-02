@@ -7,7 +7,7 @@ namespace STDDatos
 {
     public class SolicitanteBl
     {
-        public List<Solicitante> Obtener()
+        public List<Solicitante> Listar()
         {
             try
             {
@@ -21,7 +21,7 @@ namespace STDDatos
             }
         }
 
-        public List<Solicitante> ObtenerSolicitante(int codigoSolicitante)
+        public List<Solicitante> Obtener(int codigoSolicitante)
         {
             try
             {

@@ -14,15 +14,6 @@ C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario
 C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices.csprojResolveAssemblyReference.cache
 C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
 C:\Users\MDP01\Desktop\ProyectoDSD_v2\ProyectoDSD\DSD\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.pdb
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\Iesi.Collections.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\NHibernate.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.pdb
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices.csprojResolveAssemblyReference.cache
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
-C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.dll
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.pdb
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\Iesi.Collections.dll
@@ -32,3 +23,21 @@ C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocument
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
 C:\Users\Administrator\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\Iesi.Collections.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\NHibernate.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.pdb
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices.csprojResolveAssemblyReference.cache
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
+C:\Users\MDP01\Desktop\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDServices2.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\Iesi.Collections.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\NHibernate.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\bin\STDDatos.pdb
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices.csprojResolveAssemblyReference.cache
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.dll
+D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDServices\obj\Debug\STDServices2.pdb

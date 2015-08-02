@@ -5,17 +5,16 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using STDDatos;
 
 namespace STDServices
 {
     public class SolicitanteService : ISolicitante
     {
-        public List<Solicitante> ListarSolicitante()
+        public List<STDDatos.Solicitante> ListarSolicitante()
         {
             try
             {
-                var lista = new SolicitanteBl().Obtener();
+                var lista = new STDDatos.SolicitanteBl().Listar();
                 return lista;
             }
             catch (Exception ex)
@@ -24,11 +23,11 @@ namespace STDServices
             }
         }
 
-        public List<Solicitante> ObtenerSolicitante(int codigo)
+        public List<STDDatos.Solicitante> ObtenerSolicitante(int codigo)
         {
             try
             {
-                var lista = new SolicitanteBl().ObtenerSolicitante(codigo);
+                var lista = new STDDatos.SolicitanteBl().Obtener(codigo);
                 return lista;
             }
             catch (Exception ex)
@@ -37,7 +36,7 @@ namespace STDServices
             }
         }
 
-        public String AgregarSolicitante(Solicitante pSolicitante, ref int codigo)
+        public String AgregarSolicitante(STDDatos.Solicitante pSolicitante, ref int codigo)
         {
             String mensaje = "";
             try
@@ -46,7 +45,7 @@ namespace STDServices
 
                 if (validacion)
                 {
-                    bool resultado = new SolicitanteBl().Agregar(ref pSolicitante);
+                    bool resultado = new STDDatos.SolicitanteBl().Agregar(ref pSolicitante);
                     if (resultado)
                     {
                         codigo = pSolicitante.codigo;
@@ -71,7 +70,7 @@ namespace STDServices
             }
         }
 
-        private bool verificaSolicitante(Solicitante pSolicitante, ref String mensaje)
+        private bool verificaSolicitante(STDDatos.Solicitante pSolicitante, ref String mensaje)
         {
             if (pSolicitante.nombre.Equals(""))
             {
@@ -109,8 +108,8 @@ namespace STDServices
 
         private bool verificaValor(String cadena)
         {
-            int resultado = 0;
-            bool verifica = int.TryParse(cadena, out resultado);
+            long resultado = 0;
+            bool verifica = long.TryParse(cadena, out resultado);
             return verifica;
         }
     }

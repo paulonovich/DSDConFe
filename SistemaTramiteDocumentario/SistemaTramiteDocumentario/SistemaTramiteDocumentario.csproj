@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EvaluarExpediente.aspx" />
     <Content Include="RegistrarCargo.aspx" />
     <Content Include="ConsultarTUPA.aspx" />
     <Content Include="Login.aspx" />
@@ -68,50 +69,18 @@
     <Content Include="obj\Debug\SistemaTramiteDocumentario.pdb" />
     <Content Include="RegistrarExpediente.aspx" />
     <Content Include="RegistrarSolicitante.aspx" />
-    <None Include="Service References\SWCargo\CargoService.disco" />
-    <None Include="Service References\SWCargo\configuration91.svcinfo" />
-    <None Include="Service References\SWCargo\configuration.svcinfo" />
-    <None Include="Service References\SWCargo\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\SWExpediente\ExpedienteService.disco" />
-    <None Include="Service References\SWExpediente\configuration91.svcinfo" />
-    <None Include="Service References\SWExpediente\configuration.svcinfo" />
-    <None Include="Service References\SWExpediente\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\SWSolicitante\SolicitanteService.disco" />
-    <None Include="Service References\SWSolicitante\configuration91.svcinfo" />
-    <None Include="Service References\SWSolicitante\configuration.svcinfo" />
-    <None Include="Service References\SWSolicitante\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\SWTramite\STDServices.SWTramite.Tramite.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SWTramite\TramiteService.disco" />
-    <None Include="Service References\SWTramite\configuration91.svcinfo" />
-    <None Include="Service References\SWTramite\configuration.svcinfo" />
-    <None Include="Service References\SWTramite\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\SWTupa\STDServices.SWTupa.Tupa.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SWTupa\TupaService.disco" />
-    <None Include="Service References\SWTupa\configuration91.svcinfo" />
-    <None Include="Service References\SWTupa\configuration.svcinfo" />
-    <None Include="Service References\SWTupa\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvaluarExpediente.aspx.cs">
+      <DependentUpon>EvaluarExpediente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvaluarExpediente.aspx.designer.cs">
+      <DependentUpon>EvaluarExpediente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarCargo.aspx.cs">
       <DependentUpon>RegistrarCargo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,94 +124,10 @@
     <Compile Include="RegistrarSolicitante.aspx.designer.cs">
       <DependentUpon>RegistrarSolicitante.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\SWCargo\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SWExpediente\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SWSolicitante\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SWTramite\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SWTupa\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\SistemaTramiteDocumentario.csprojResolveAssemblyReference.cache" />
-    <None Include="Service References\SWCargo\CargoService.wsdl" />
-    <None Include="Service References\SWCargo\CargoService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWCargo\CargoService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWCargo\CargoService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWCargo\STDServices.SWCargo.Cargo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SWExpediente\ExpedienteService.wsdl" />
-    <None Include="Service References\SWExpediente\ExpedienteService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWExpediente\ExpedienteService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWExpediente\ExpedienteService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWExpediente\STDServices.SWExpediente.Expediente.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SWSolicitante\SolicitanteService.wsdl" />
-    <None Include="Service References\SWSolicitante\SolicitanteService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWSolicitante\SolicitanteService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWSolicitante\SolicitanteService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWSolicitante\STDServices.SWSolicitante.Solicitante.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SWTramite\TramiteService.wsdl" />
-    <None Include="Service References\SWTramite\TramiteService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWTramite\TramiteService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWTramite\TramiteService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWTupa\TupaService.wsdl" />
-    <None Include="Service References\SWTupa\TupaService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWTupa\TupaService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SWTupa\TupaService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,14 +141,14 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SWCargo\" />
-    <WCFMetadataStorage Include="Service References\SWExpediente\" />
-    <WCFMetadataStorage Include="Service References\SWSolicitante\" />
-    <WCFMetadataStorage Include="Service References\SWTramite\" />
-    <WCFMetadataStorage Include="Service References\SWTupa\" />
+    <ProjectReference Include="..\STDDatos\STDDatos.csproj">
+      <Project>{770C7686-234C-4424-9A6B-1D74DC5692BE}</Project>
+      <Name>STDDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STDNegocio\STDNegocio.csproj">
+      <Project>{DEC6FAC9-BCF8-4051-9B08-840DE2929A3E}</Project>
+      <Name>STDNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -278,7 +163,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>43848</DevelopmentServerPort>
+          <DevelopmentServerPort>7412</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

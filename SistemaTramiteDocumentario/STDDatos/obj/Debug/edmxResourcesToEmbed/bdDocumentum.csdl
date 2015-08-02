@@ -22,6 +22,7 @@
       <End Role="Expediente" EntitySet="Expediente" />
       <End Role="Cargo" EntitySet="Cargo" />
     </AssociationSet>
+    <EntitySet Name="Evaluacion" EntityType="BDDOCUMENTUMModel.Evaluacion" />
   </EntityContainer>
   <EntityType Name="Tramite">
     <Key>
@@ -126,4 +127,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Evaluacion">
+    <Key>
+      <PropertyRef Name="codigoExpediente" />
+    </Key>
+    <Property Type="Int32" Name="codigoExpediente" Nullable="false" />
+    <Property Type="String" Name="Tramite" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Solicitante" MaxLength="401" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Estado" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Recepcionista" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

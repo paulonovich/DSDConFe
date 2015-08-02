@@ -4,28 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using STDServices.SWSolicitante;
+using STDDatos;
+using STDNegocio;
 
 namespace SistemaTramiteDocumentario
 {
     public partial class RegistrarSolicitante : System.Web.UI.Page
     {
-
-        private Solicitante solicitante
-        {
-            get
-            {
-                if (ViewState["Solicitante"] != null)
-                    return (Solicitante)ViewState["Solicitante"];
-                else
-                    return null;
-            }
-            set
-            {
-                ViewState["Solicitante"] = value;
-            }
-        }
-
         private int codigoSolicitante
         {
             get
@@ -68,7 +53,7 @@ namespace SistemaTramiteDocumentario
         {
             try
             {
-                solicitante = new Solicitante();
+                Solicitante solicitante = new Solicitante();
                 solicitante.nombre = txtNombre.Text.Trim();
                 solicitante.apellido = txtApellido.Text.Trim();
                 solicitante.dni = txtDNI.Text.Trim();
@@ -76,23 +61,24 @@ namespace SistemaTramiteDocumentario
                 solicitante.correo = txtCorreo.Text.Trim();
                 solicitante.direccion = txtDireccion.Text.Trim();
 
-                SolicitanteClient solicitanteClient = new SolicitanteClient();
-                String resultado = "";
+                SolicitanteNeg solicitanteNegocio = new SolicitanteNeg();
+                String mensaje = "";
                 int codigo = 0;
-                resultado = solicitanteClient.AgregarSolicitante(solicitante, ref codigo);
-                if (resultado.Equals(""))
+                solicitanteNegocio.AgregarSolicitante(solicitante, ref mensaje, ref codigo);
+
+                if (codigo>0)
                 {
                     solicitante.codigo = codigo;
-                    resultado = "Resultado correcto.";
                     btnGuardar.Visible = false;
                     btnContinuar.Visible = true;
+                    Session["codigoSolicitante"] = solicitante.codigo;
                 }
                 else
                 {
                     btnGuardar.Visible = true;
                     btnContinuar.Visible = false;
                 }
-                lblError.Text = resultado;
+                lblError.Text = mensaje;
             }
             catch (Exception ex)
             {
@@ -105,7 +91,6 @@ namespace SistemaTramiteDocumentario
         protected void btnContinuar_Click(object sender, EventArgs e)
         {
             Session["codigoTramite"] = codigoTramite;
-            Session["codigoSolicitante"] = solicitante.codigo;
             Response.Redirect("RegistrarExpediente.aspx");
         }
     }

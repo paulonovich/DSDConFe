@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="669266df-e964-4b2a-ba46-1f27991cca9a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44593/TramiteService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TramiteService.xsd" MetadataType="Schema" ID="b6316707-4dba-422a-88a0-b1078b9f4779" SourceId="1" SourceUrl="http://localhost:44593/TramiteService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TramiteService1.xsd" MetadataType="Schema" ID="e69d6d25-75f2-44ab-a351-6ce99fe10d03" SourceId="1" SourceUrl="http://localhost:44593/TramiteService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TramiteService.wsdl" MetadataType="Wsdl" ID="e8ab09cb-a946-4224-b764-ca0a060b2464" SourceId="1" SourceUrl="http://localhost:44593/TramiteService.svc?wsdl" />
+    <MetadataFile FileName="TramiteService2.xsd" MetadataType="Schema" ID="4a9daab3-ba79-4d5a-8a07-987b6f00053a" SourceId="1" SourceUrl="http://localhost:44593/TramiteService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TramiteService.disco" MetadataType="Disco" ID="69056c34-81b1-460e-ab84-b76648771937" SourceId="1" SourceUrl="http://localhost:44593/TramiteService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
