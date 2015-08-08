@@ -50,23 +50,24 @@ namespace SistemaTramiteDocumentario
                 {
                     SolicitanteNeg solicitanteNegocio = new SolicitanteNeg();
                     List<Solicitante> ListaSolicitante = new List<Solicitante>();
+                    Solicitante solicitanteDato = new Solicitante();
                     String mensaje = "";
                     codigoTramite = Convert.ToInt32(Session["codigoTramite"]);
                     codigoSolicitante = Convert.ToInt32(Session["codigoSolicitante"]);
-
-                    ListaSolicitante = solicitanteNegocio.ObtenerSolicitante(codigoSolicitante, ref mensaje);
+                    solicitanteDato = solicitanteNegocio.ObtenerSolicitante(codigoSolicitante, ref mensaje);
+                    ListaSolicitante.Add(solicitanteDato);
 
                     if (mensaje.Equals(""))
                     {
+                        Bloquear(false);
                         gvSolicitante.DataSource = ListaSolicitante;
                         gvSolicitante.DataBind();
                         ddlTramite.SelectedValue = codigoTramite.ToString();
-                        Bloquear(false);
                     }
                     else
                     {
-                        lblError.Text = mensaje;
                         Bloquear(true);
+                        lblError.Text = mensaje;
                     }
 
                 }
@@ -74,26 +75,6 @@ namespace SistemaTramiteDocumentario
                 {
                     Bloquear(true);
                 }
-            }
-        }
-
-        private void Bloquear(bool valor)
-        {
-            gvSolicitante.Visible = !valor;
-            btnGenerarCargo.Visible = !valor;
-        }
-
-        protected void btnConsultarTUPA_Click(object sender, EventArgs e)
-        {
-            codigoTramite = int.Parse(ddlTramite.SelectedValue.ToString());
-            if (codigoTramite == 0)
-            {
-                lblError.Text = "Seleccione un valor válido.";
-            }
-            else
-            {
-                Session["codigoTramite"] = codigoTramite.ToString();
-                Response.Redirect("ConsultarTUPA.aspx");
             }
         }
 
@@ -118,6 +99,29 @@ namespace SistemaTramiteDocumentario
             }
         }
 
+        private void Bloquear(bool valor)
+        {
+            lblError.Text = "";
+            lblErrorCarga.Text = "";
+            gvSolicitante.Visible = !valor;
+            btnGenerarCargo.Visible = !valor;
+        }
+
+        protected void btnConsultarTUPA_Click(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+            codigoTramite = int.Parse(ddlTramite.SelectedValue.ToString());
+            if (codigoTramite == 0)
+            {
+                lblError.Text = "Seleccione un valor válido.";
+            }
+            else
+            {
+                Session["codigoTramite"] = codigoTramite.ToString();
+                Response.Redirect("ConsultarTUPA.aspx");
+            }
+        }
+
         protected void btnGenerarCargo_Click(object sender, EventArgs e)
         {
             Session["codigoTramite"] = codigoTramite;
@@ -125,15 +129,13 @@ namespace SistemaTramiteDocumentario
 
             ExpedienteNeg expedienteNegocio = new ExpedienteNeg();
             String mensaje = "";
-            int codigo = 0;
             Expediente eExpediente = new Expediente();
-            eExpediente.codigo = 1;
             eExpediente.codigoSolicitante = codigoSolicitante;
             eExpediente.codigoTramite = codigoTramite;
             eExpediente.Estado = 1;
-            expedienteNegocio.AgregarExpediente(eExpediente, ref mensaje, ref codigo);
+            eExpediente = expedienteNegocio.AgregarExpediente(eExpediente, ref mensaje);
 
-            if (codigo > 0)
+            if (eExpediente.codigo > 0)
             {
                 Session["codigoExpediente"] = eExpediente.codigo;
                 Response.Redirect("RegistrarCargo.aspx");

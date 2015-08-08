@@ -63,20 +63,18 @@ namespace SistemaTramiteDocumentario
 
                 SolicitanteNeg solicitanteNegocio = new SolicitanteNeg();
                 String mensaje = "";
-                int codigo = 0;
-                solicitanteNegocio.AgregarSolicitante(solicitante, ref mensaje, ref codigo);
+                solicitante = solicitanteNegocio.AgregarSolicitante(solicitante, ref mensaje);
 
-                if (codigo>0)
+                if (solicitante.codigo > 0)
                 {
-                    solicitante.codigo = codigo;
-                    btnGuardar.Visible = false;
                     btnContinuar.Visible = true;
+                    btnGuardar.Visible = false;
                     Session["codigoSolicitante"] = solicitante.codigo;
                 }
                 else
                 {
-                    btnGuardar.Visible = true;
                     btnContinuar.Visible = false;
+                    btnGuardar.Visible = true;
                 }
                 lblError.Text = mensaje;
             }

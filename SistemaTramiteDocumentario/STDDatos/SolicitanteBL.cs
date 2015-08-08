@@ -11,27 +11,34 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Solicitante.ToList();
-                return vResult;
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
+                {
+                    var vResult = datos.Solicitantes.ToList();
+                    return vResult;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al listar los solicitantes.");
             }
         }
 
-        public List<Solicitante> Obtener(int codigoSolicitante)
+        public Solicitante Obtener(int codigoSolicitante)
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Solicitante.Where(t => t.codigo == codigoSolicitante).ToList();
-                return vResult;
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
+                {
+                    var vResult = datos.Solicitantes.FirstOrDefault(t => t.codigo == codigoSolicitante);
+                    if (vResult != null)
+                        return vResult;
+                    else
+                        throw new Exception("No existe el Solicitante a buscar");
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al buscar el Solicitante.");
             }
         }
 
@@ -39,21 +46,19 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Solicitante.AddObject(pSolicitante);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    datos.Solicitantes.AddObject(pSolicitante);
+                    var vResult = datos.SaveChanges();
+                    if (vResult > 0)
+                        return true;
+                    else
+                        return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al registrar el solicitante.");
             }
         }
     }

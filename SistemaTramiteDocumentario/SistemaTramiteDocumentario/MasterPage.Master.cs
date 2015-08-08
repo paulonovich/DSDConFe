@@ -26,7 +26,7 @@ namespace SistemaTramiteDocumentario
 
         protected void lbRegUsu_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("RegistrarUsuario.aspx");
+            Response.Redirect("RegistrarUsuario.aspx");
         }
     }
 }

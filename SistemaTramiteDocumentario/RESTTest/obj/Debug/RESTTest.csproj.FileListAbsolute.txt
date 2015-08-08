@@ -5,3 +5,10 @@ D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTr
 D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\obj\Debug\RESTTest.csprojResolveAssemblyReference.cache
 D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\obj\Debug\RESTTest.dll
 D:\UPC\4.- CICLO VI\DESARROLLO PARA SISTEMAS DISTRIBUIDOS\Trabajo\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\obj\Debug\RESTTest.pdb
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\obj\Debug\RESTTest.csprojResolveAssemblyReference.cache
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\obj\Debug\RESTTest.dll
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\obj\Debug\RESTTest.pdb
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\bin\Debug\RESTTest.dll
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\bin\Debug\RESTTest.pdb
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\bin\Debug\STDDatos.dll
+C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\bin\Debug\STDDatos.pdb

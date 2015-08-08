@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 
 namespace STDDatos
 {
-    [DataContract(IsReference = true)]
+    [DataContract(IsReference = false)]
     [KnownType(typeof(Tramite))]
     public partial class Tupa
     {
@@ -86,16 +86,16 @@ namespace STDDatos
     
         private void FixupTramite(Tramite previousValue)
         {
-            if (previousValue != null && previousValue.Tupa.Contains(this))
+            if (previousValue != null && previousValue.Tupas.Contains(this))
             {
-                previousValue.Tupa.Remove(this);
+                previousValue.Tupas.Remove(this);
             }
     
             if (Tramite != null)
             {
-                if (!Tramite.Tupa.Contains(this))
+                if (!Tramite.Tupas.Contains(this))
                 {
-                    Tramite.Tupa.Add(this);
+                    Tramite.Tupas.Add(this);
                 }
                 if (codigoTramite != Tramite.codigo)
                 {

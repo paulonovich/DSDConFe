@@ -13,10 +13,9 @@ namespace STDServices
     public interface IExpediente
     {
         [OperationContract]
-        bool AgregarExpediente(ref Expediente pExpediente);
+        STDDatos.Expediente ObtenerExpediente(int codigo);
 
         [OperationContract]
-        List<Expediente> ObtenerExpediente(int codigo);
-
+        bool AgregarExpediente(ref STDDatos.Expediente pExpediente);
     }
 }

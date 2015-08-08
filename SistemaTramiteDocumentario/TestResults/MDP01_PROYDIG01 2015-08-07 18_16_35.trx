@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="e77eccfe-28bf-4fe5-8c94-879811098ba4" name="MDP01@PROYDIG01 2015-08-07 18:16:35" runUser="DOMBIF\MDP01" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="57575775-4119-43cc-a897-8ac4e5484c01">
+    <Deployment runDeploymentRoot="MDP01_PROYDIG01 2015-08-07 18_16_35">
+      <DeploymentItem filename="C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\STDDatos\bin\Debug\STDDatos.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2015-08-07T18:16:35.8005070-05:00" queuing="2015-08-07T18:16:41.8205070-05:00" start="2015-08-07T18:16:41.9325070-05:00" finish="2015-08-07T18:16:51.6125070-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="3" error="0" failed="3" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="4" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ObtenerEvaluacion" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\resttest\bin\debug\resttest.dll" id="3fdefc49-f916-ed98-3aaa-18951e25d7cd">
+      <Execution id="a0e4d0f4-3549-4d71-a975-e413cb3341e2" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/RESTTest/bin/Debug/RESTTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="RESTTest.PruebasREST, RESTTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ObtenerEvaluacion" />
+    </UnitTest>
+    <UnitTest name="TextCorrecto" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\stdtest\bin\debug\stdtest.dll" id="2e23657c-5e9e-410c-2fc0-41938fc190b7">
+      <Execution id="789a0774-4819-4b0c-adae-543952f33ea1" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/STDTest/bin/Debug/STDTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="STDTest.TestSolicitante, STDTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TextCorrecto" />
+    </UnitTest>
+    <UnitTest name="TestError" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\stdtest\bin\debug\stdtest.dll" id="68f90f41-c95e-34e3-49b6-137a495aabee">
+      <Execution id="3fc0533d-aa3c-425e-844e-c5874173db0e" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/STDTest/bin/Debug/STDTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="STDTest.TestExpediente, STDTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestError" />
+    </UnitTest>
+    <UnitTest name="TextCorrecto" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\stdtest\bin\debug\stdtest.dll" id="8c2e4780-dfbc-7349-d6a7-0d497b6d9c26">
+      <Execution id="4cc5e833-d54c-4662-b239-f0549a02906d" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/STDTest/bin/Debug/STDTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="STDTest.TestExpediente, STDTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TextCorrecto" />
+    </UnitTest>
+    <UnitTest name="ObtenerEvaluacionError" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\resttest\bin\debug\resttest.dll" id="9cfc4c4c-2dcf-a097-78d7-c8eb9a7e7b0d">
+      <Execution id="27a9d826-165f-4b6b-999e-bf359f651cbc" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/RESTTest/bin/Debug/RESTTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="RESTTest.PruebasREST, RESTTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ObtenerEvaluacionError" />
+    </UnitTest>
+    <UnitTest name="ObtenerEvaluacionError2" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\resttest\bin\debug\resttest.dll" id="5786c6bb-7807-0954-16be-6948889d8cdb">
+      <Execution id="73baec02-bfa5-4645-b170-15592830c8e6" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/RESTTest/bin/Debug/RESTTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="RESTTest.PruebasREST, RESTTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ObtenerEvaluacionError2" />
+    </UnitTest>
+    <UnitTest name="TestError" storage="c:\users\mdp01\desktop\v2.0\v2.0\sistematramitedocumentario\sistematramitedocumentario\stdtest\bin\debug\stdtest.dll" id="f5c34045-eba5-8ff2-d408-f90713549b5b">
+      <Execution id="5943adb7-4315-4f73-be5b-cd34f5d956d9" />
+      <TestMethod codeBase="C:/Users/MDP01/Desktop/v2.0/v2.0/SistemaTramiteDocumentario/SistemaTramiteDocumentario/STDTest/bin/Debug/STDTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="STDTest.TestSolicitante, STDTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestError" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2e23657c-5e9e-410c-2fc0-41938fc190b7" executionId="789a0774-4819-4b0c-adae-543952f33ea1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3fdefc49-f916-ed98-3aaa-18951e25d7cd" executionId="a0e4d0f4-3549-4d71-a975-e413cb3341e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5786c6bb-7807-0954-16be-6948889d8cdb" executionId="73baec02-bfa5-4645-b170-15592830c8e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68f90f41-c95e-34e3-49b6-137a495aabee" executionId="3fc0533d-aa3c-425e-844e-c5874173db0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c2e4780-dfbc-7349-d6a7-0d497b6d9c26" executionId="4cc5e833-d54c-4662-b239-f0549a02906d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9cfc4c4c-2dcf-a097-78d7-c8eb9a7e7b0d" executionId="27a9d826-165f-4b6b-999e-bf359f651cbc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f5c34045-eba5-8ff2-d408-f90713549b5b" executionId="5943adb7-4315-4f73-be5b-cd34f5d956d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="789a0774-4819-4b0c-adae-543952f33ea1" testId="2e23657c-5e9e-410c-2fc0-41938fc190b7" testName="TextCorrecto" computerName="PROYDIG01" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotRunnable" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="789a0774-4819-4b0c-adae-543952f33ea1">
+      <Output>
+        <ErrorInfo>
+          <Message>UTA004: Illegal use of attribute on STDTest.TestSolicitante.TextCorrecto. The TestMethodAttribute can be defined only inside a class marked with the TestClass attribute.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a0e4d0f4-3549-4d71-a975-e413cb3341e2" testId="3fdefc49-f916-ed98-3aaa-18951e25d7cd" testName="ObtenerEvaluacion" computerName="PROYDIG01" duration="00:00:07.9432335" startTime="2015-08-07T18:16:42.1535070-05:00" endTime="2015-08-07T18:16:51.0705070-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0e4d0f4-3549-4d71-a975-e413cb3341e2">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RESTTest.PruebasREST.ObtenerEvaluacion threw exception: 
+System.Net.WebException: Error en el servidor remoto: (400) Solicitud incorrecta.</Message>
+          <StackTrace>    en System.Net.HttpWebRequest.GetResponse()
+   en RESTTest.PruebasREST.ObtenerEvaluacion() en C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\PruebasREST.cs:línea 21
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="73baec02-bfa5-4645-b170-15592830c8e6" testId="5786c6bb-7807-0954-16be-6948889d8cdb" testName="ObtenerEvaluacionError2" computerName="PROYDIG01" duration="00:00:00.4734661" startTime="2015-08-07T18:16:51.0735070-05:00" endTime="2015-08-07T18:16:51.5495070-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="73baec02-bfa5-4645-b170-15592830c8e6">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RESTTest.PruebasREST.ObtenerEvaluacionError2 threw exception: 
+System.ArgumentException: Primitivo JSON no válido: .</Message>
+          <StackTrace>    en System.Web.Script.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   en System.Web.Script.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   en System.Web.Script.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   en System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   en System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   en RESTTest.PruebasREST.ObtenerEvaluacionError2() en C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\PruebasREST.cs:línea 83
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3fc0533d-aa3c-425e-844e-c5874173db0e" testId="68f90f41-c95e-34e3-49b6-137a495aabee" testName="TestError" computerName="PROYDIG01" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotRunnable" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3fc0533d-aa3c-425e-844e-c5874173db0e">
+      <Output>
+        <ErrorInfo>
+          <Message>UTA004: Illegal use of attribute on STDTest.TestExpediente.TestError. The TestMethodAttribute can be defined only inside a class marked with the TestClass attribute.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4cc5e833-d54c-4662-b239-f0549a02906d" testId="8c2e4780-dfbc-7349-d6a7-0d497b6d9c26" testName="TextCorrecto" computerName="PROYDIG01" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotRunnable" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4cc5e833-d54c-4662-b239-f0549a02906d">
+      <Output>
+        <ErrorInfo>
+          <Message>UTA004: Illegal use of attribute on STDTest.TestExpediente.TextCorrecto. The TestMethodAttribute can be defined only inside a class marked with the TestClass attribute.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="27a9d826-165f-4b6b-999e-bf359f651cbc" testId="9cfc4c4c-2dcf-a097-78d7-c8eb9a7e7b0d" testName="ObtenerEvaluacionError" computerName="PROYDIG01" duration="00:00:00.0186302" startTime="2015-08-07T18:16:51.5585070-05:00" endTime="2015-08-07T18:16:51.5835070-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27a9d826-165f-4b6b-999e-bf359f651cbc">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RESTTest.PruebasREST.ObtenerEvaluacionError threw exception: 
+System.ArgumentException: Primitivo JSON no válido: .</Message>
+          <StackTrace>    en System.Web.Script.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   en System.Web.Script.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   en System.Web.Script.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   en System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   en System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   en RESTTest.PruebasREST.ObtenerEvaluacionError() en C:\Users\MDP01\Desktop\v2.0\v2.0\SistemaTramiteDocumentario\SistemaTramiteDocumentario\RESTTest\PruebasREST.cs:línea 52
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5943adb7-4315-4f73-be5b-cd34f5d956d9" testId="f5c34045-eba5-8ff2-d408-f90713549b5b" testName="TestError" computerName="PROYDIG01" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotRunnable" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5943adb7-4315-4f73-be5b-cd34f5d956d9">
+      <Output>
+        <ErrorInfo>
+          <Message>UTA004: Illegal use of attribute on STDTest.TestSolicitante.TestError. The TestMethodAttribute can be defined only inside a class marked with the TestClass attribute.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

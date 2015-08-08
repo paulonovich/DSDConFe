@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 
 namespace STDDatos
 {
-    [DataContract(IsReference = true)]
+    [DataContract(IsReference = false)]
     [KnownType(typeof(Expediente))]
     [KnownType(typeof(Tupa))]
     public partial class Tramite
@@ -40,76 +40,76 @@ namespace STDDatos
         
     
         [DataMember]
-        public virtual ICollection<Expediente> Expediente
+        public virtual ICollection<Expediente> Expedientes
         {
             get
             {
-                if (_expediente == null)
+                if (_expedientes == null)
                 {
                     var newCollection = new FixupCollection<Expediente>();
-                    newCollection.CollectionChanged += FixupExpediente;
-                    _expediente = newCollection;
+                    newCollection.CollectionChanged += FixupExpedientes;
+                    _expedientes = newCollection;
                 }
-                return _expediente;
+                return _expedientes;
             }
             set
             {
-                if (!ReferenceEquals(_expediente, value))
+                if (!ReferenceEquals(_expedientes, value))
                 {
-                    var previousValue = _expediente as FixupCollection<Expediente>;
+                    var previousValue = _expedientes as FixupCollection<Expediente>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= FixupExpediente;
+                        previousValue.CollectionChanged -= FixupExpedientes;
                     }
-                    _expediente = value;
+                    _expedientes = value;
                     var newValue = value as FixupCollection<Expediente>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += FixupExpediente;
+                        newValue.CollectionChanged += FixupExpedientes;
                     }
                 }
             }
         }
-        private ICollection<Expediente> _expediente;
+        private ICollection<Expediente> _expedientes;
         
     
         [DataMember]
-        public virtual ICollection<Tupa> Tupa
+        public virtual ICollection<Tupa> Tupas
         {
             get
             {
-                if (_tupa == null)
+                if (_tupas == null)
                 {
                     var newCollection = new FixupCollection<Tupa>();
-                    newCollection.CollectionChanged += FixupTupa;
-                    _tupa = newCollection;
+                    newCollection.CollectionChanged += FixupTupas;
+                    _tupas = newCollection;
                 }
-                return _tupa;
+                return _tupas;
             }
             set
             {
-                if (!ReferenceEquals(_tupa, value))
+                if (!ReferenceEquals(_tupas, value))
                 {
-                    var previousValue = _tupa as FixupCollection<Tupa>;
+                    var previousValue = _tupas as FixupCollection<Tupa>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= FixupTupa;
+                        previousValue.CollectionChanged -= FixupTupas;
                     }
-                    _tupa = value;
+                    _tupas = value;
                     var newValue = value as FixupCollection<Tupa>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += FixupTupa;
+                        newValue.CollectionChanged += FixupTupas;
                     }
                 }
             }
         }
-        private ICollection<Tupa> _tupa;
+        private ICollection<Tupa> _tupas;
 
         #endregion
         #region Association Fixup
     
-        private void FixupExpediente(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupExpedientes(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
@@ -131,7 +131,7 @@ namespace STDDatos
             }
         }
     
-        private void FixupTupa(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupTupas(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {

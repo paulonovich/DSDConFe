@@ -10,62 +10,23 @@ namespace STDServices
 {
     public class SolicitanteService : ISolicitante
     {
-        public List<STDDatos.Solicitante> ListarSolicitante()
-        {
-            try
-            {
-                var lista = new STDDatos.SolicitanteBl().Listar();
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException(ex.Message);
-            }
-        }
-
-        public List<STDDatos.Solicitante> ObtenerSolicitante(int codigo)
-        {
-            try
-            {
-                var lista = new STDDatos.SolicitanteBl().Obtener(codigo);
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException(ex.Message);
-            }
-        }
-
-        public String AgregarSolicitante(STDDatos.Solicitante pSolicitante, ref int codigo)
+        public bool AgregarSolicitante(ref STDDatos.Solicitante pSolicitante)
         {
             String mensaje = "";
             try
             {
                 bool validacion = verificaSolicitante(pSolicitante, ref mensaje);
-
                 if (validacion)
                 {
-                    bool resultado = new STDDatos.SolicitanteBl().Agregar(ref pSolicitante);
-                    if (resultado)
-                    {
-                        codigo = pSolicitante.codigo;
-                        return mensaje;
-                    }
-                    else
-                    {
-                        pSolicitante = null;
-                        return "Ocurrio un error al momento de registrar al solicitante.";
-                    }
+                    return new STDDatos.SolicitanteBl().Agregar(ref pSolicitante);
                 }
                 else
                 {
-                    pSolicitante = null;
-                    return mensaje;
+                    throw new FaultException(mensaje);
                 }
             }
             catch (Exception ex)
             {
-                pSolicitante = null;
                 throw new FaultException(ex.Message);
             }
         }
@@ -112,5 +73,46 @@ namespace STDServices
             bool verifica = long.TryParse(cadena, out resultado);
             return verifica;
         }
+        
+        public STDDatos.Solicitante ObtenerSolicitante(int codigo)
+        {
+            try
+            {
+                return new STDDatos.SolicitanteBl().Obtener(codigo);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public List<STDDatos.Solicitante> ListarSolicitante()
+        {
+            try
+            {
+                return new STDDatos.SolicitanteBl().Listar();
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
+        }
+
+        
     }
 }

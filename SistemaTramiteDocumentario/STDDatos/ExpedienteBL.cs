@@ -11,22 +11,19 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Expediente.AddObject(pExpediente);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
                 {
-                    pExpediente.codigo = vResult;
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    datos.Expedientes.AddObject(pExpediente);
+                    var vResult = datos.SaveChanges();
+                    if (vResult > 0)
+                        return true;
+                    else
+                        return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al registrar el expediente.");
             }
         }
 
@@ -34,36 +31,39 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Expediente.Attach(pExpediente);
-                datos.ObjectStateManager.ChangeObjectState(pExpediente, System.Data.EntityState.Modified);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    datos.Expedientes.Attach(pExpediente);
+                    datos.ObjectStateManager.ChangeObjectState(pExpediente, System.Data.EntityState.Modified);
+                    var vResult = datos.SaveChanges();
+                    if (vResult > 0)
+                        return true;
+                    else
+                        throw new Exception("No existe el registro Expediente para modificar.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al actualizar el expediente.");
             }
         }
 
-        public List<Expediente> Obtener(int codigo)
+        public Expediente Obtener(int codigoExpediente)
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Expediente.Where(t => t.codigo == codigo).ToList();
-                return vResult;
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
+                {
+                    var vResult = datos.Expedientes.FirstOrDefault(t => t.codigo == codigoExpediente);
+                    if (vResult != null)
+                        return vResult;
+                    else
+                        throw new Exception("No existe el Expediente a buscar");
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al buscar el Expediente.");
             }
         }
     }

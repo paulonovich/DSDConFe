@@ -63,6 +63,7 @@
       <DependentUpon>bdDocumentum.tt</DependentUpon>
     </Compile>
     <Compile Include="CargoBL.cs" />
+    <Compile Include="UsuarioBL.cs" />
     <Compile Include="EvaluacionBL.cs" />
     <Compile Include="Evaluacion.cs">
       <DependentUpon>bdDocumentum.tt</DependentUpon>
@@ -84,6 +85,9 @@
       <DependentUpon>bdDocumentum.tt</DependentUpon>
     </Compile>
     <Compile Include="Tupa.cs">
+      <DependentUpon>bdDocumentum.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
       <DependentUpon>bdDocumentum.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -58,6 +58,17 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Cargo" nillable="true" type="tns:Cargo" />
+  <xs:complexType name="Tupa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Tramite" nillable="true" type="tns:Tramite" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoTramite" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Tupa" nillable="true" type="tns:Tupa" />
   <xs:complexType name="Solicitante">
     <xs:sequence>
       <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:ArrayOfExpediente" />
@@ -73,17 +84,6 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Solicitante" nillable="true" type="tns:Solicitante" />
-  <xs:complexType name="Tupa">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Tramite" nillable="true" type="tns:Tramite" />
-      <xs:element minOccurs="0" name="codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="codigoTramite" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
-    </xs:sequence>
-    <xs:attribute ref="ser:Id" />
-    <xs:attribute ref="ser:Ref" />
-  </xs:complexType>
-  <xs:element name="Tupa" nillable="true" type="tns:Tupa" />
   <xs:complexType name="ArrayOfTupa">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Tupa" nillable="true" type="tns:Tupa" />

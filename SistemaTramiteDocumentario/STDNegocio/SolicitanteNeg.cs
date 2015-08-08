@@ -11,6 +11,49 @@ namespace STDNegocio
     {
         SolicitanteClient cliente = new SolicitanteClient();
 
+        public Solicitante AgregarSolicitante(Solicitante pSolicitante, ref String mensaje)
+        {
+            try
+            {
+                bool resultado = cliente.AgregarSolicitante(ref pSolicitante);
+                mensaje = "Solicitante registrado.";
+                return pSolicitante;
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+                return null;
+            }
+        }
+
+        public Solicitante ObtenerSolicitante(int codigo, ref String mensaje)
+        {
+            try
+            {
+                mensaje = "";
+                return cliente.ObtenerSolicitante(codigo);
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+                return null;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public List<Solicitante> ListarSolicitante(ref String mensaje)
         {
             try
@@ -23,35 +66,6 @@ namespace STDNegocio
             {
                 mensaje = "No se pudo obtener la lista de solicitantes.";
                 return null;
-            }
-        }
-
-        public List<Solicitante> ObtenerSolicitante(int codigo, ref String mensaje)
-        {
-            try
-            {
-                List<Solicitante> lista = cliente.ObtenerSolicitante(codigo);
-                mensaje = "";
-                return lista;
-            }
-            catch (Exception)
-            {
-                mensaje = "No se pudo obtener la información del solicitante.";
-                return null;
-            }
-        }
-
-        public void AgregarSolicitante(Solicitante pSolicitante, ref String mensaje, ref int codigo)
-        {
-            try
-            {
-                String resultado = cliente.AgregarSolicitante(pSolicitante,ref codigo);
-                if (resultado.Equals("")) { mensaje = resultado; }
-                else { mensaje = "Solicitante registrado!"; }
-            }
-            catch (Exception)
-            {
-                mensaje = "No se pudo registrar el solicitante.";
             }
         }
     }

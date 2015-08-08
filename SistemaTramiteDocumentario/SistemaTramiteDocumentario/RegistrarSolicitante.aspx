@@ -24,13 +24,13 @@
                         <tr>
                             <td>&nbsp;</td>
                             <td>DNI:</td>
-                            <td><asp:TextBox ID="txtDNI" runat="server" MaxLength="13"></asp:TextBox></td>
+                            <td><asp:TextBox ID="txtDNI" runat="server" MaxLength="8"></asp:TextBox></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
                             <td>Telefono:</td>
-                            <td><asp:TextBox ID="txtTelefono" runat="server" MaxLength="13"></asp:TextBox></td>
+                            <td><asp:TextBox ID="txtTelefono" runat="server" MaxLength="9"></asp:TextBox></td>
                             <td></td>
                         </tr>
                         <tr>

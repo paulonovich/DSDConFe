@@ -9,19 +9,17 @@ namespace STDNegocio
 {
     public class TramiteNeg
     {
-
+        TramiteClient cliente = new TramiteClient();
         public List<Tramite> ListarTramites(ref String mensaje)
         {
             try
             {
-                TramiteClient cliente = new TramiteClient();
-                List<Tramite> lista = cliente.ListarTramites();
                 mensaje = "";
-                return lista;
+                return cliente.ListarTramites();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                mensaje = "No se pudo cargar la lista de tramites.";
+                mensaje = ex.Message;
                 return null;
             }
         }

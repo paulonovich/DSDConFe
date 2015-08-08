@@ -11,13 +11,18 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Tupa.Where(t => t.codigoTramite == codigoTramite).ToList();
-                return vResult;
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
+                {
+                    var vResult = datos.Tupas.Where(t => t.codigoTramite == codigoTramite).ToList();
+                    if (vResult != null)
+                        return vResult;
+                    else
+                        throw new Exception("No existe informacion del TUPA a buscar");
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al buscar el TUPA.");
             }
         }
     }

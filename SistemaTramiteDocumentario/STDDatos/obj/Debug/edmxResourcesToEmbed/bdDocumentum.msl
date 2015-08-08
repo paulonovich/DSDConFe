@@ -1,24 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BDDOCUMENTUMModelStoreContainer" CdmEntityContainer="BDDOCUMENTUMEntities">
-    <EntitySetMapping Name="Tramite">
-      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Tramite">
-        <MappingFragment StoreEntitySet="Tramite">
+    <EntitySetMapping Name="Cargoes">
+      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Solicitante" ColumnName="Solicitante" />
+          <ScalarProperty Name="Recepcionista" ColumnName="Recepcionista" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="codigoExpediente" ColumnName="codigoExpediente" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tupa">
-      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Tupa">
-        <MappingFragment StoreEntitySet="Tupa">
-          <ScalarProperty Name="codigo" ColumnName="codigo" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
+    <EntitySetMapping Name="Expedientes">
+      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Expediente">
+        <MappingFragment StoreEntitySet="Expediente">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
           <ScalarProperty Name="codigoTramite" ColumnName="codigoTramite" />
+          <ScalarProperty Name="codigoSolicitante" ColumnName="codigoSolicitante" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Solicitante">
+    <EntitySetMapping Name="Solicitantes">
       <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Solicitante">
         <MappingFragment StoreEntitySet="Solicitante">
           <ScalarProperty Name="direccion" ColumnName="direccion" />
@@ -31,36 +36,40 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cargo">
-      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Cargo">
-        <MappingFragment StoreEntitySet="Cargo">
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-          <ScalarProperty Name="Solicitante" ColumnName="Solicitante" />
-          <ScalarProperty Name="codigoExpediente" ColumnName="codigoExpediente" />
-          <ScalarProperty Name="Recepcionista" ColumnName="Recepcionista" />
-          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+    <EntitySetMapping Name="Tramites">
+      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Tramite">
+        <MappingFragment StoreEntitySet="Tramite">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Expediente">
-      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Expediente">
-        <MappingFragment StoreEntitySet="Expediente">
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
+    <EntitySetMapping Name="Tupas">
+      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Tupa">
+        <MappingFragment StoreEntitySet="Tupa">
           <ScalarProperty Name="codigoTramite" ColumnName="codigoTramite" />
-          <ScalarProperty Name="codigoSolicitante" ColumnName="codigoSolicitante" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Evaluacion">
+    <EntitySetMapping Name="Evaluacions">
       <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Evaluacion">
         <MappingFragment StoreEntitySet="Evaluacion">
-          <ScalarProperty Name="Recepcionista" ColumnName="Recepcionista" />
           <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Recepcionista" ColumnName="Recepcionista" />
           <ScalarProperty Name="Solicitante" ColumnName="Solicitante" />
           <ScalarProperty Name="Tramite" ColumnName="Tramite" />
           <ScalarProperty Name="codigoExpediente" ColumnName="codigoExpediente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="BDDOCUMENTUMModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -35,27 +35,6 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Cargo" nillable="true" type="tns:Cargo" />
-  <xs:complexType name="Solicitante">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:ArrayOfExpediente" />
-      <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
-    </xs:sequence>
-    <xs:attribute ref="ser:Id" />
-    <xs:attribute ref="ser:Ref" />
-  </xs:complexType>
-  <xs:element name="Solicitante" nillable="true" type="tns:Solicitante" />
-  <xs:complexType name="ArrayOfExpediente">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expediente" nillable="true" type="tns:Expediente" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfExpediente" nillable="true" type="tns:ArrayOfExpediente" />
   <xs:complexType name="Tramite">
     <xs:sequence>
       <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:ArrayOfExpediente" />
@@ -67,6 +46,12 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Tramite" nillable="true" type="tns:Tramite" />
+  <xs:complexType name="ArrayOfExpediente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expediente" nillable="true" type="tns:Expediente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpediente" nillable="true" type="tns:ArrayOfExpediente" />
   <xs:complexType name="ArrayOfTupa">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Tupa" nillable="true" type="tns:Tupa" />
@@ -84,4 +69,19 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Tupa" nillable="true" type="tns:Tupa" />
+  <xs:complexType name="Solicitante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:ArrayOfExpediente" />
+      <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Solicitante" nillable="true" type="tns:Solicitante" />
 </xs:schema>

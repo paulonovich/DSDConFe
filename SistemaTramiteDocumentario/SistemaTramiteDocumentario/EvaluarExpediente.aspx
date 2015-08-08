@@ -27,7 +27,6 @@
                                         <asp:BoundField DataField="codigoExpediente" HeaderText="Codigo Expediente" />
                                         <asp:BoundField DataField="Tramite" HeaderText="Tramite" />
                                         <asp:BoundField DataField="Solicitante" HeaderText="Solicitante" />
-                                        <asp:BoundField DataField="Recepcionista" HeaderText="Recepcionista" />
                                         <asp:BoundField DataField="Estado" HeaderText="Estado" />
                                     </Columns>
                                     <FooterStyle BackColor="#CCCC99" />
@@ -57,14 +56,14 @@
                         </tr>
                         <tr id="trPregunta" runat="server">
                             <td colspan="4" style="text-align:center;">
-                                <asp:Label ID="lblTexto" runat="server" Text="El expediente seleccionado debe ser:"></asp:Label>
+                                <asp:Label ID="lblTexto" runat="server" Text="El expediente seleccionado será:"></asp:Label>
                             </td>
                         </tr>
                         <tr id="trOpcion" runat="server">
                             <td colspan="4" style="text-align:center;">
-                                <asp:Button ID="btnAprobar" runat="server" Text="Aprobar" Width="150px" 
+                                <asp:Button ID="btnAprobar" runat="server" Text="Aprobado" Width="150px" 
                                     onclick="btnAprobar_Click" />
-                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" Width="150px" 
+                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelado" Width="150px" 
                                     onclick="btnCancelar_Click" />
                             </td>
                         </tr>

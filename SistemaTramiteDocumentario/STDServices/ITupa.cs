@@ -13,6 +13,6 @@ namespace STDServices
     public interface ITupa
     {
         [OperationContract]
-        List<Tupa> ObtenerTupa(int codigoTramite);
+        List<STDDatos.Tupa> ObtenerTupa(int codigoTramite);
     }
 }

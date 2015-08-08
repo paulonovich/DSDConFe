@@ -13,12 +13,12 @@ namespace STDServices
     public interface ICargo
     {
         [OperationContract]
-        List<Cargo> ObtenerCargo(int codigo);
+        STDDatos.Cargo ObtenerCargo(int codigo);
+
+        [OperationContract]
+        bool AgregarCargo(ref STDDatos.Cargo pCargo);
 
         [OperationContract]
         int ObtenerNuevoCodigo();
-
-        [OperationContract]
-        bool AgregarCargo(Cargo pCargo);
     }
 }

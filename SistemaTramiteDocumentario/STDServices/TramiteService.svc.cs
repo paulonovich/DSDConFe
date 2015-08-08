@@ -9,20 +9,18 @@ using System.Text;
 namespace STDServices
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    public class TramiteService : ITramite 
+    public class TramiteService : ITramite
     {
         public List<STDDatos.Tramite> ListarTramites()
         {
             try
             {
-                var lista = new STDDatos.TramiteBl().Listar();
-                return lista;
+                return new STDDatos.TramiteBl().Listar();
             }
             catch (Exception ex)
             {
                 throw new FaultException(ex.Message);
             }
-
         }
     }
 }

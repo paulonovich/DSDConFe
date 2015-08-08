@@ -20,18 +20,30 @@ namespace SistemaTramiteDocumentario
                 List<Evaluacion> ListaEvaluacion = new List<Evaluacion>();
                 String mensaje = "";
 
-                //Se enlaza a la capa de negocio y obtiene la lista de evaluaciones, devuelve tambien un mensaje
-                ListaEvaluacion = evaluacionNegocio.ListarEvaluacion(ref mensaje);
-
-                //Si no existe mensaje significa que si devolvio informacion
+                mensaje = evaluacionNegocio.Actualizar();
                 if (mensaje.Equals(""))
                 {
-                    //mostramos el gridview y ocultamos los botones de aprobacion
-                    gvExpediente.Visible = true;
-                    trOpcion.Visible = false;
-                    trPregunta.Visible = false;
-                    gvExpediente.DataSource = ListaEvaluacion;
-                    gvExpediente.DataBind();
+                    //Se enlaza a la capa de negocio y obtiene la lista de evaluaciones, devuelve tambien un mensaje
+                    ListaEvaluacion = evaluacionNegocio.ListarEvaluacion(ref mensaje);
+
+                    //Si no existe mensaje significa que si devolvio informacion
+                    if (mensaje.Equals(""))
+                    {
+                        //mostramos el gridview y ocultamos los botones de aprobacion
+                        gvExpediente.Visible = true;
+                        trOpcion.Visible = false;
+                        trPregunta.Visible = false;
+                        gvExpediente.DataSource = ListaEvaluacion;
+                        gvExpediente.DataBind();
+                    }
+                    else
+                    {
+                        //Ocultamos la grilla y los botones de aprobacion
+                        gvExpediente.Visible = false;
+                        trOpcion.Visible = false;
+                        trPregunta.Visible = false;
+                        lblError.Text = mensaje;
+                    }
                 }
                 else
                 {
@@ -91,33 +103,23 @@ namespace SistemaTramiteDocumentario
             Evaluar(2);
         }
 
-        public void Evaluar(int estado) {
+        public void Evaluar(int estado)
+        {
             //conectamos la capa de negocio (STDNegocio)
-            List<Expediente> ListaExpediente = new List<Expediente>();
+            Expediente eExpediente = new Expediente();
             ExpedienteNeg expedienteNegocio = new ExpedienteNeg();
             EvaluacionNeg evaluacionNegocio = new EvaluacionNeg();
             String mensaje = "";
             int codigoExp = Convert.ToInt32(hdCodigo.Value);
             //Obtenemos la informacion del expediente en base al codigo seleccionado
-            ListaExpediente = expedienteNegocio.ObtenerExpediente(codigoExp, ref mensaje);
+            eExpediente = expedienteNegocio.ObtenerExpediente(codigoExp, ref mensaje);
             //modificamos el estado del expediente
-            ListaExpediente[0].Estado = estado;
+            eExpediente.Estado = estado;
             //recuperamos el mensaje 
-            mensaje = evaluacionNegocio.Actualizar(ListaExpediente[0]);
-
-            //si devuelve mensaje significa que ha marcado error en alguna parte del proceso
-            if (mensaje.Equals(""))
-            {
-                lblError.Text = "Expediente actualizado";
-                trOpcion.Visible = false;
-                trPregunta.Visible = false;
-            }
-            else
-            {
-                lblError.Text = mensaje;
-                trOpcion.Visible = true;
-                trPregunta.Visible = true;
-            }
+            mensaje = evaluacionNegocio.ActualizarCola(eExpediente);
+            lblError.Text = mensaje;
+            trOpcion.Visible = false;
+            trPregunta.Visible = false;
         }
     }
 }

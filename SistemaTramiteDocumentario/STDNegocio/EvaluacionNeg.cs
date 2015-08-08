@@ -10,114 +10,115 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Messaging;
 
 namespace STDNegocio
 {
     public class EvaluacionNeg
     {
-        //Listado de las evaluaciones
-        public List<Evaluacion> ListarEvaluacion(ref string mensaje)
+        public List<Evaluacion> ListarEvaluacion(ref String mensaje)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:7966/Evaluacion.svc/Evaluacion");
-            req.Method = "GET";
-            var res = (HttpWebResponse)req.GetResponse();
-            StreamReader reader = new StreamReader(res.GetResponseStream());
-            string listaEvaluacion = reader.ReadToEnd();
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            List<Evaluacion> ListaEvaluacion = js.Deserialize<List<Evaluacion>>(listaEvaluacion);
-
-            if (ListaEvaluacion != null && ListaEvaluacion.Count > 0)
+            List<Evaluacion> ListaEvaluacion = new List<Evaluacion>();
+            try
             {
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:7966/Evaluacion.svc/Evaluacion");
+                req.Method = "GET";
+                var res = (HttpWebResponse)req.GetResponse();
+                StreamReader reader = new StreamReader(res.GetResponseStream());
+                string listaEvaluacion = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                ListaEvaluacion = js.Deserialize<List<Evaluacion>>(listaEvaluacion);
                 mensaje = "";
             }
-            else
+            catch (WebException e)
             {
-                mensaje = "No se encontraron registros";
+                HttpStatusCode code = ((HttpWebResponse)e.Response).StatusCode;
+                string message = ((HttpWebResponse)e.Response).StatusDescription;
+                StreamReader reader = new StreamReader(e.Response.GetResponseStream());
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                mensaje = js.Deserialize<string>(error);
             }
             return ListaEvaluacion;
         }
 
-        //Actualizacion de los expedientes
-        public String Actualizar(Expediente expedienteModificado)
-        {
-            String mensaje = "";
+        public String ActualizarCola(Expediente expedienteModificado) {
             try
             {
-                byte[] bData = ObjectToByteArray(expedienteModificado);
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:7966/Evaluacion.svc/Evaluacion");
-                request.Method = "PUT";
-                request.ContentLength = bData.Length;
-                request.ContentType = "application/json";
-                var requestStream = request.GetRequestStream();
-                requestStream.Write(bData, 0, bData.Length);
-                var response = (HttpWebResponse)request.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string evaluacionJson = reader.ReadToEnd();
-                JavaScriptSerializer jsSerializacion = new JavaScriptSerializer();
-                Evaluacion alumnoModificado = jsSerializacion.Deserialize<Evaluacion>(evaluacionJson);
-                return mensaje;
+                string rutaCola = @".\private$\evaluacionXhora";
+                if (!MessageQueue.Exists(rutaCola))
+                    MessageQueue.Create(rutaCola);
+                MessageQueue cola = new MessageQueue(rutaCola);
+                Message mensaje = new Message();
+                mensaje.Label = "Expediente actualizado";
+                mensaje.Body = new Expediente()
+                {
+                    codigo = expedienteModificado.codigo,
+                    codigoSolicitante = expedienteModificado.codigoSolicitante,
+                    codigoTramite = expedienteModificado.codigoTramite,
+                    Estado = expedienteModificado.Estado
+                };
+                cola.Send(mensaje);
+                return "Se registro la actualización del expediente.";
             }
             catch (Exception)
             {
-                return "Ocurrio un error al actualizar la evaluacion.";
+                return "Hubo un error al registrar la actualizacion del expediente.";
             }
         }
 
-        private byte[] ObjectToByteArray(Expediente obj)
+        //Actualizacion de los expedientes
+        public String Actualizar()
         {
-            if (obj == null)
-                return null;
-            BinaryFormatter bf = new BinaryFormatter();
-            using (MemoryStream ms = new MemoryStream())
+            String mensajeFinal = "";
+            /* 1. Regulizar expedientes*/
+            string rutaCola = @".\private$\evaluacionXhora";
+            if (!MessageQueue.Exists(rutaCola))
+                MessageQueue.Create(rutaCola);
+            MessageQueue cola = new MessageQueue(rutaCola);
+            cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(Expediente) });
+
+            while (cola.GetAllMessages().Count() != 0)
             {
-                bf.Serialize(ms, obj);
-                return ms.ToArray();
+                Message mensaje = cola.Receive();
+                Expediente expedienteItem = (Expediente)mensaje.Body;
+
+                string postdata = "{" +
+                    "\"codigo\":" + expedienteItem.codigo + "," +
+                    "\"codigoSolicitante\":" + expedienteItem.codigoSolicitante + "," +
+                    "\"codigoTramite\":" + expedienteItem.codigoTramite + "," +
+                    "\"Estado\":" + expedienteItem.Estado + "}";
+                            
+                byte[] data = Encoding.UTF8.GetBytes(postdata);
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:7966/Evaluacion.svc/Evaluacion");
+                req.Method = "PUT";
+                req.ContentLength = data.Length;
+                req.ContentType = "application/json";
+                var reqStream = req.GetRequestStream();
+                reqStream.Write(data, 0, data.Length);
+                HttpWebResponse res = null;
+                try
+                {
+                    res = (HttpWebResponse)req.GetResponse();
+                    StreamReader reader = new StreamReader(res.GetResponseStream());
+                    string pedidoJson = reader.ReadToEnd();
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    Expediente pedidoCreado = js.Deserialize<Expediente>(pedidoJson);
+                    mensajeFinal = "";
+                }
+                catch (WebException e)
+                {
+                    HttpStatusCode code = ((HttpWebResponse)e.Response).StatusCode;
+                    string message = ((HttpWebResponse)e.Response).StatusDescription;
+                    StreamReader reader = new StreamReader(e.Response.GetResponseStream());
+                    string error = reader.ReadToEnd();
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    string msjError = js.Deserialize<string>(error);
+                    mensajeFinal = msjError;
+                    break;
+                }
             }
+            return mensajeFinal;
         }
-
-        //public List<Evaluacion> ObtenerEvaluacion(int codigo,ref string mensaje)
-        //{
-        //    HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:7966/Evaluacion.svc/Evaluacion");
-        //    req.Method = "GET";
-        //    var res = (HttpWebResponse)req.GetResponse();
-        //    StreamReader reader = new StreamReader(res.GetResponseStream());
-        //    string listaEvaluacion = reader.ReadToEnd();
-        //    JavaScriptSerializer js = new JavaScriptSerializer();
-        //    List<Evaluacion> ListaEvaluacion = js.Deserialize<List<Evaluacion>>(listaEvaluacion);
-
-        //    if (ListaEvaluacion != null && ListaEvaluacion.Count > 0)
-        //    {
-        //        mensaje = "";
-        //    }
-        //    else
-        //    {
-        //        mensaje = "No se encontraron registros";
-        //    }
-        //    return ListaEvaluacion;
-        //}
-
-
-
-
-        //public List<Evaluacion> ListarEvaluacion(ref string mensaje)
-        //{
-        //    HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:7966/Evaluacion.svc/Evaluacion");
-        //    req.Method = "GET";
-        //    var res = (HttpWebResponse)req.GetResponse();
-        //    StreamReader reader = new StreamReader(res.GetResponseStream());
-        //    string listaEvaluacion = reader.ReadToEnd();
-        //    JavaScriptSerializer js = new JavaScriptSerializer();
-        //    List<Evaluacion> ListaEvaluacion = js.Deserialize<List<Evaluacion>>(listaEvaluacion);
-
-        //    if (ListaEvaluacion != null && ListaEvaluacion.Count > 0)
-        //    {
-        //        mensaje = "";
-        //    }
-        //    else
-        //    {
-        //        mensaje = "No se encontraron registros";
-        //    }
-        //    return ListaEvaluacion;
-        //}
     }
 }

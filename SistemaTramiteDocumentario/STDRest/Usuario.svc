@@ -1,0 +1,6 @@
+﻿<%@ ServiceHost 
+Language="C#" 
+Debug="true" 
+Service="STDRest.Usuario" 
+CodeBehind="Usuario.svc.cs" 
+Factory="System.ServiceModel.Activation.WebServiceHostFactory"%>

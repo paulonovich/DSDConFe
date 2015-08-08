@@ -59,13 +59,17 @@ namespace SistemaTramiteDocumentario
                 }
                 else
                 {
-                    gvTUPA.Visible = false;
                     lblError.Text = "No hay un código de trámite activo.";
+                    gvTUPA.Visible = false;
+                    btnContinuar.Visible = false;
+                    btnRegresar.Visible = true;
                 }
             }
             catch (Exception ex)
             {
                 gvTUPA.Visible = false;
+                btnContinuar.Visible = false;
+                btnRegresar.Visible = true;
                 lblError.Text = ex.ToString();
             }
         }
@@ -104,6 +108,7 @@ namespace SistemaTramiteDocumentario
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             Response.Redirect("RegistrarExpediente.aspx");
         }
     }

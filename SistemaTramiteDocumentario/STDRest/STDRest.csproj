@@ -59,6 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Usuario.svc" />
     <Content Include="Evaluacion.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -69,6 +70,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUsuario.cs" />
+    <Compile Include="Usuario.svc.cs">
+      <DependentUpon>Usuario.svc</DependentUpon>
+    </Compile>
     <Compile Include="Evaluacion.svc.cs">
       <DependentUpon>Evaluacion.svc</DependentUpon>
     </Compile>

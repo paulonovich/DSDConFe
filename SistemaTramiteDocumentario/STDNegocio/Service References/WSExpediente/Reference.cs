@@ -15,11 +15,11 @@ namespace STDNegocio.WSExpediente {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSExpediente.IExpediente")]
     public interface IExpediente {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpediente/ObtenerExpediente", ReplyAction="http://tempuri.org/IExpediente/ObtenerExpedienteResponse")]
+        STDDatos.Expediente ObtenerExpediente(int codigo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpediente/AgregarExpediente", ReplyAction="http://tempuri.org/IExpediente/AgregarExpedienteResponse")]
         bool AgregarExpediente(ref STDDatos.Expediente pExpediente);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExpediente/ObtenerExpediente", ReplyAction="http://tempuri.org/IExpediente/ObtenerExpedienteResponse")]
-        System.Collections.Generic.List<STDDatos.Expediente> ObtenerExpediente(int codigo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace STDNegocio.WSExpediente {
                 base(binding, remoteAddress) {
         }
         
-        public bool AgregarExpediente(ref STDDatos.Expediente pExpediente) {
-            return base.Channel.AgregarExpediente(ref pExpediente);
+        public STDDatos.Expediente ObtenerExpediente(int codigo) {
+            return base.Channel.ObtenerExpediente(codigo);
         }
         
-        public System.Collections.Generic.List<STDDatos.Expediente> ObtenerExpediente(int codigo) {
-            return base.Channel.ObtenerExpediente(codigo);
+        public bool AgregarExpediente(ref STDDatos.Expediente pExpediente) {
+            return base.Channel.AgregarExpediente(ref pExpediente);
         }
     }
 }

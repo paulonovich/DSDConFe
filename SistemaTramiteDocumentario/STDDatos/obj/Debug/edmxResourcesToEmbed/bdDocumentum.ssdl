@@ -6,6 +6,7 @@
     <EntitySet Name="Solicitante" EntityType="BDDOCUMENTUMModel.Store.Solicitante" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tramite" EntityType="BDDOCUMENTUMModel.Store.Tramite" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tupa" EntityType="BDDOCUMENTUMModel.Store.Tupa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="BDDOCUMENTUMModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Evaluacion" EntityType="BDDOCUMENTUMModel.Store.Evaluacion" store:Type="Views" store:Schema="dbo" store:Name="Evaluacion">
       <DefiningQuery>SELECT 
       [Evaluacion].[codigoExpediente] AS [codigoExpediente], 
@@ -79,18 +80,27 @@
     <Property Name="nombre" Type="nvarchar" MaxLength="200" />
     <Property Name="codigoTramite" Type="int" />
   </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="DNI" />
+    </Key>
+    <Property Name="DNI" Type="nvarchar" Nullable="false" MaxLength="8" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="1" />
+  </EntityType>
   <!--Se encontraron errores durante la generación:
       advertencia 6002: La tabla o vista 'BDDOCUMENTUM.dbo.Evaluacion' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
   <EntityType Name="Evaluacion">
     <Key>
       <PropertyRef Name="codigoExpediente" />
+      <PropertyRef Name="Recepcionista" />
     </Key>
     <Property Name="codigoExpediente" Type="int" Nullable="false" />
-    <Property Name="Tramite" Type="nvarchar" MaxLength="200" />
+    <Property Name="Tramite" Type="int" />
     <Property Name="Solicitante" Type="varchar" MaxLength="401" />
-    <Property Name="Recepcionista" Type="nvarchar" MaxLength="200" />
-    <Property Name="Estado" Type="nvarchar" MaxLength="200" />
+    <Property Name="Recepcionista" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="Estado" Type="int" />
   </EntityType>
   <Association Name="FK_Cargo_Expediente">
     <End Role="Expediente" Type="BDDOCUMENTUMModel.Store.Expediente" Multiplicity="0..1" />

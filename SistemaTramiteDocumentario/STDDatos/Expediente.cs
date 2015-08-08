@@ -16,10 +16,10 @@ using System.Runtime.Serialization;
 
 namespace STDDatos
 {
-    [DataContract(IsReference = true)]
+    [DataContract(IsReference = false)]
+    [KnownType(typeof(Cargo))]
     [KnownType(typeof(Solicitante))]
     [KnownType(typeof(Tramite))]
-    [KnownType(typeof(Cargo))]
     public partial class Expediente
     {
         #region Primitive Properties
@@ -91,6 +91,40 @@ namespace STDDatos
         
     
         [DataMember]
+        public virtual ICollection<Cargo> Cargoes
+        {
+            get
+            {
+                if (_cargoes == null)
+                {
+                    var newCollection = new FixupCollection<Cargo>();
+                    newCollection.CollectionChanged += FixupCargoes;
+                    _cargoes = newCollection;
+                }
+                return _cargoes;
+            }
+            set
+            {
+                if (!ReferenceEquals(_cargoes, value))
+                {
+                    var previousValue = _cargoes as FixupCollection<Cargo>;
+                    if (previousValue != null)
+                    {
+                        previousValue.CollectionChanged -= FixupCargoes;
+                    }
+                    _cargoes = value;
+                    var newValue = value as FixupCollection<Cargo>;
+                    if (newValue != null)
+                    {
+                        newValue.CollectionChanged += FixupCargoes;
+                    }
+                }
+            }
+        }
+        private ICollection<Cargo> _cargoes;
+        
+    
+        [DataMember]
         public virtual Solicitante Solicitante
         {
             get { return _solicitante; }
@@ -122,40 +156,6 @@ namespace STDDatos
             }
         }
         private Tramite _tramite;
-        
-    
-        [DataMember]
-        public virtual ICollection<Cargo> Cargo_1
-        {
-            get
-            {
-                if (_cargo_1 == null)
-                {
-                    var newCollection = new FixupCollection<Cargo>();
-                    newCollection.CollectionChanged += FixupCargo_1;
-                    _cargo_1 = newCollection;
-                }
-                return _cargo_1;
-            }
-            set
-            {
-                if (!ReferenceEquals(_cargo_1, value))
-                {
-                    var previousValue = _cargo_1 as FixupCollection<Cargo>;
-                    if (previousValue != null)
-                    {
-                        previousValue.CollectionChanged -= FixupCargo_1;
-                    }
-                    _cargo_1 = value;
-                    var newValue = value as FixupCollection<Cargo>;
-                    if (newValue != null)
-                    {
-                        newValue.CollectionChanged += FixupCargo_1;
-                    }
-                }
-            }
-        }
-        private ICollection<Cargo> _cargo_1;
 
         #endregion
         #region Association Fixup
@@ -164,16 +164,16 @@ namespace STDDatos
     
         private void FixupSolicitante(Solicitante previousValue)
         {
-            if (previousValue != null && previousValue.Expediente.Contains(this))
+            if (previousValue != null && previousValue.Expedientes.Contains(this))
             {
-                previousValue.Expediente.Remove(this);
+                previousValue.Expedientes.Remove(this);
             }
     
             if (Solicitante != null)
             {
-                if (!Solicitante.Expediente.Contains(this))
+                if (!Solicitante.Expedientes.Contains(this))
                 {
-                    Solicitante.Expediente.Add(this);
+                    Solicitante.Expedientes.Add(this);
                 }
                 if (codigoSolicitante != Solicitante.codigo)
                 {
@@ -188,16 +188,16 @@ namespace STDDatos
     
         private void FixupTramite(Tramite previousValue)
         {
-            if (previousValue != null && previousValue.Expediente.Contains(this))
+            if (previousValue != null && previousValue.Expedientes.Contains(this))
             {
-                previousValue.Expediente.Remove(this);
+                previousValue.Expedientes.Remove(this);
             }
     
             if (Tramite != null)
             {
-                if (!Tramite.Expediente.Contains(this))
+                if (!Tramite.Expedientes.Contains(this))
                 {
-                    Tramite.Expediente.Add(this);
+                    Tramite.Expedientes.Add(this);
                 }
                 if (codigoTramite != Tramite.codigo)
                 {
@@ -210,13 +210,13 @@ namespace STDDatos
             }
         }
     
-        private void FixupCargo_1(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupCargoes(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
                 foreach (Cargo item in e.NewItems)
                 {
-                    item.Expediente_1 = this;
+                    item.Expediente = this;
                 }
             }
     
@@ -224,9 +224,9 @@ namespace STDDatos
             {
                 foreach (Cargo item in e.OldItems)
                 {
-                    if (ReferenceEquals(item.Expediente_1, this))
+                    if (ReferenceEquals(item.Expediente, this))
                     {
-                        item.Expediente_1 = null;
+                        item.Expediente = null;
                     }
                 }
             }

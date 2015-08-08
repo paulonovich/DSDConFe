@@ -7,32 +7,32 @@
       <xsd:import schemaLocation="http://localhost:44593/ExpedienteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STDDatos" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IExpediente_AgregarExpediente_InputMessage">
-    <wsdl:part name="parameters" element="tns:AgregarExpediente" />
-  </wsdl:message>
-  <wsdl:message name="IExpediente_AgregarExpediente_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AgregarExpedienteResponse" />
-  </wsdl:message>
   <wsdl:message name="IExpediente_ObtenerExpediente_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerExpediente" />
   </wsdl:message>
   <wsdl:message name="IExpediente_ObtenerExpediente_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerExpedienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IExpediente_AgregarExpediente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarExpediente" />
+  </wsdl:message>
+  <wsdl:message name="IExpediente_AgregarExpediente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarExpedienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IExpediente">
-    <wsdl:operation name="AgregarExpediente">
-      <wsdl:input wsaw:Action="http://tempuri.org/IExpediente/AgregarExpediente" message="tns:IExpediente_AgregarExpediente_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IExpediente/AgregarExpedienteResponse" message="tns:IExpediente_AgregarExpediente_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ObtenerExpediente">
       <wsdl:input wsaw:Action="http://tempuri.org/IExpediente/ObtenerExpediente" message="tns:IExpediente_ObtenerExpediente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IExpediente/ObtenerExpedienteResponse" message="tns:IExpediente_ObtenerExpediente_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AgregarExpediente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpediente/AgregarExpediente" message="tns:IExpediente_AgregarExpediente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpediente/AgregarExpedienteResponse" message="tns:IExpediente_AgregarExpediente_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IExpediente" type="tns:IExpediente">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="AgregarExpediente">
-      <soap:operation soapAction="http://tempuri.org/IExpediente/AgregarExpediente" style="document" />
+    <wsdl:operation name="ObtenerExpediente">
+      <soap:operation soapAction="http://tempuri.org/IExpediente/ObtenerExpediente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -40,8 +40,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerExpediente">
-      <soap:operation soapAction="http://tempuri.org/IExpediente/ObtenerExpediente" style="document" />
+    <wsdl:operation name="AgregarExpediente">
+      <soap:operation soapAction="http://tempuri.org/IExpediente/AgregarExpediente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

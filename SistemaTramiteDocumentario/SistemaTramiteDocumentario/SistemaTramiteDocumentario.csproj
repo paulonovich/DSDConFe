@@ -69,6 +69,7 @@
     <Content Include="obj\Debug\SistemaTramiteDocumentario.pdb" />
     <Content Include="RegistrarExpediente.aspx" />
     <Content Include="RegistrarSolicitante.aspx" />
+    <Content Include="RegistrarUsuario.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="RegistrarSolicitante.aspx.designer.cs">
       <DependentUpon>RegistrarSolicitante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

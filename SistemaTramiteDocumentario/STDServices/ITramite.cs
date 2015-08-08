@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using STDDatos;
 
 namespace STDServices
 {
@@ -13,6 +12,6 @@ namespace STDServices
     public interface ITramite
     {
         [OperationContract]
-        List<Tramite> ListarTramites();
+        List<STDDatos.Tramite> ListarTramites();
     }
 }

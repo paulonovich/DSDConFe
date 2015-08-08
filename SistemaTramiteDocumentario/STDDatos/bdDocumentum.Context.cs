@@ -42,41 +42,47 @@ namespace STDDatos
     
         #region ObjectSet Properties
     
-        public ObjectSet<Tramite> Tramite
+        public ObjectSet<Cargo> Cargoes
         {
-            get { return _tramite  ?? (_tramite = CreateObjectSet<Tramite>("Tramite")); }
+            get { return _cargoes  ?? (_cargoes = CreateObjectSet<Cargo>("Cargoes")); }
         }
-        private ObjectSet<Tramite> _tramite;
+        private ObjectSet<Cargo> _cargoes;
     
-        public ObjectSet<Tupa> Tupa
+        public ObjectSet<Expediente> Expedientes
         {
-            get { return _tupa  ?? (_tupa = CreateObjectSet<Tupa>("Tupa")); }
+            get { return _expedientes  ?? (_expedientes = CreateObjectSet<Expediente>("Expedientes")); }
         }
-        private ObjectSet<Tupa> _tupa;
+        private ObjectSet<Expediente> _expedientes;
     
-        public ObjectSet<Solicitante> Solicitante
+        public ObjectSet<Solicitante> Solicitantes
         {
-            get { return _solicitante  ?? (_solicitante = CreateObjectSet<Solicitante>("Solicitante")); }
+            get { return _solicitantes  ?? (_solicitantes = CreateObjectSet<Solicitante>("Solicitantes")); }
         }
-        private ObjectSet<Solicitante> _solicitante;
+        private ObjectSet<Solicitante> _solicitantes;
     
-        public ObjectSet<Cargo> Cargo
+        public ObjectSet<Tramite> Tramites
         {
-            get { return _cargo  ?? (_cargo = CreateObjectSet<Cargo>("Cargo")); }
+            get { return _tramites  ?? (_tramites = CreateObjectSet<Tramite>("Tramites")); }
         }
-        private ObjectSet<Cargo> _cargo;
+        private ObjectSet<Tramite> _tramites;
     
-        public ObjectSet<Expediente> Expediente
+        public ObjectSet<Tupa> Tupas
         {
-            get { return _expediente  ?? (_expediente = CreateObjectSet<Expediente>("Expediente")); }
+            get { return _tupas  ?? (_tupas = CreateObjectSet<Tupa>("Tupas")); }
         }
-        private ObjectSet<Expediente> _expediente;
+        private ObjectSet<Tupa> _tupas;
     
-        public ObjectSet<Evaluacion> Evaluacion
+        public ObjectSet<Evaluacion> Evaluacions
         {
-            get { return _evaluacion  ?? (_evaluacion = CreateObjectSet<Evaluacion>("Evaluacion")); }
+            get { return _evaluacions  ?? (_evaluacions = CreateObjectSet<Evaluacion>("Evaluacions")); }
         }
-        private ObjectSet<Evaluacion> _evaluacion;
+        private ObjectSet<Evaluacion> _evaluacions;
+    
+        public ObjectSet<Usuario> Usuarios
+        {
+            get { return _usuarios  ?? (_usuarios = CreateObjectSet<Usuario>("Usuarios")); }
+        }
+        private ObjectSet<Usuario> _usuarios;
 
         #endregion
     }

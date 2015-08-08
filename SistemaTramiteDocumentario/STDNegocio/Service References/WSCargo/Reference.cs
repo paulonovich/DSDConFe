@@ -16,13 +16,13 @@ namespace STDNegocio.WSCargo {
     public interface ICargo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICargo/ObtenerCargo", ReplyAction="http://tempuri.org/ICargo/ObtenerCargoResponse")]
-        System.Collections.Generic.List<STDDatos.Cargo> ObtenerCargo(int codigo);
+        STDDatos.Cargo ObtenerCargo(int codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICargo/AgregarCargo", ReplyAction="http://tempuri.org/ICargo/AgregarCargoResponse")]
+        bool AgregarCargo(ref STDDatos.Cargo pCargo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICargo/ObtenerNuevoCodigo", ReplyAction="http://tempuri.org/ICargo/ObtenerNuevoCodigoResponse")]
         int ObtenerNuevoCodigo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICargo/AgregarCargo", ReplyAction="http://tempuri.org/ICargo/AgregarCargoResponse")]
-        bool AgregarCargo(STDDatos.Cargo pCargo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -52,16 +52,16 @@ namespace STDNegocio.WSCargo {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<STDDatos.Cargo> ObtenerCargo(int codigo) {
+        public STDDatos.Cargo ObtenerCargo(int codigo) {
             return base.Channel.ObtenerCargo(codigo);
+        }
+        
+        public bool AgregarCargo(ref STDDatos.Cargo pCargo) {
+            return base.Channel.AgregarCargo(ref pCargo);
         }
         
         public int ObtenerNuevoCodigo() {
             return base.Channel.ObtenerNuevoCodigo();
-        }
-        
-        public bool AgregarCargo(STDDatos.Cargo pCargo) {
-            return base.Channel.AgregarCargo(pCargo);
         }
     }
 }

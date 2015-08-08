@@ -10,32 +10,30 @@ namespace STDNegocio
     public class CargoNeg
     {
         CargoClient cliente = new CargoClient();
-        public List<Cargo> ObtenerCargo(int codigo, ref String mensaje)
+        public Cargo ObtenerCargo(int codigo, ref String mensaje)
         {
             try
             {
-                List<Cargo> lista = cliente.ObtenerCargo(codigo);
-                mensaje = "";
-                return lista;
+                return cliente.ObtenerCargo(codigo);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                mensaje = "No se pudo registrar el cargo.";
-                return null;
+                throw ex;
             }
         }
 
-        public void AgregarCargo(Cargo pCargo, ref String mensaje)
+        public Cargo AgregarCargo(Cargo pCargo, ref String mensaje)
         {
             try
             {
-                bool resultado = cliente.AgregarCargo(pCargo);
-                if (!resultado) mensaje = "No se pudo registrar el cargo.";
-                else mensaje = "Cargo registrado!";
+                bool resultado = cliente.AgregarCargo(ref pCargo);
+                mensaje = "Cargo registrado.";
+                return pCargo;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                mensaje = "No se pudo registrar el cargo.";
+                mensaje = ex.Message;
+                return null;
             }
         }
 

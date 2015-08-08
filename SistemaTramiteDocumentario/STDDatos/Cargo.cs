@@ -16,25 +16,13 @@ using System.Runtime.Serialization;
 
 namespace STDDatos
 {
-    [DataContract(IsReference = true)]
+    [DataContract(IsReference = false)]
     [KnownType(typeof(Expediente))]
     public partial class Cargo
     {
         #region Primitive Properties
         [DataMember]
         public virtual int codigo
-        {
-            get;
-            set;
-        }
-        [DataMember]
-        public virtual Nullable<System.DateTime> FechaEmision
-        {
-            get;
-            set;
-        }
-        [DataMember]
-        public virtual string Recepcionista
         {
             get;
             set;
@@ -50,9 +38,9 @@ namespace STDDatos
                     _settingFK = true;
                     if (_codigoExpediente != value)
                     {
-                        if (Expediente_1 != null && Expediente_1.codigo != value)
+                        if (Expediente != null && Expediente.codigo != value)
                         {
-                            Expediente_1 = null;
+                            Expediente = null;
                         }
                         _codigoExpediente = value;
                     }
@@ -64,6 +52,18 @@ namespace STDDatos
             }
         }
         private Nullable<int> _codigoExpediente;
+        [DataMember]
+        public virtual Nullable<System.DateTime> FechaEmision
+        {
+            get;
+            set;
+        }
+        [DataMember]
+        public virtual string Recepcionista
+        {
+            get;
+            set;
+        }
         [DataMember]
         public virtual string Solicitante
         {
@@ -82,42 +82,42 @@ namespace STDDatos
         
     
         [DataMember]
-        public virtual Expediente Expediente_1
+        public virtual Expediente Expediente
         {
-            get { return _expediente_1; }
+            get { return _expediente; }
             set
             {
-                if (!ReferenceEquals(_expediente_1, value))
+                if (!ReferenceEquals(_expediente, value))
                 {
-                    var previousValue = _expediente_1;
-                    _expediente_1 = value;
-                    FixupExpediente_1(previousValue);
+                    var previousValue = _expediente;
+                    _expediente = value;
+                    FixupExpediente(previousValue);
                 }
             }
         }
-        private Expediente _expediente_1;
+        private Expediente _expediente;
 
         #endregion
         #region Association Fixup
     
         private bool _settingFK = false;
     
-        private void FixupExpediente_1(Expediente previousValue)
+        private void FixupExpediente(Expediente previousValue)
         {
-            if (previousValue != null && previousValue.Cargo_1.Contains(this))
+            if (previousValue != null && previousValue.Cargoes.Contains(this))
             {
-                previousValue.Cargo_1.Remove(this);
+                previousValue.Cargoes.Remove(this);
             }
     
-            if (Expediente_1 != null)
+            if (Expediente != null)
             {
-                if (!Expediente_1.Cargo_1.Contains(this))
+                if (!Expediente.Cargoes.Contains(this))
                 {
-                    Expediente_1.Cargo_1.Add(this);
+                    Expediente.Cargoes.Add(this);
                 }
-                if (codigoExpediente != Expediente_1.codigo)
+                if (codigoExpediente != Expediente.codigo)
                 {
-                    codigoExpediente = Expediente_1.codigo;
+                    codigoExpediente = Expediente.codigo;
                 }
             }
             else if (!_settingFK)

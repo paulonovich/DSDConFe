@@ -10,18 +10,23 @@ namespace STDServices
 {
     public class ExpedienteService : IExpediente
     {
-        public bool AgregarExpediente(ref STDDatos.Expediente pExpediente)
-        {
-            bool resultado = new STDDatos.ExpedienteBl().Agregar(ref pExpediente);
-            return resultado;
-        }
-
-        public List<STDDatos.Expediente> ObtenerExpediente(int codigo)
+        public STDDatos.Expediente ObtenerExpediente(int codigo)
         {
             try
             {
-                var lista = new STDDatos.ExpedienteBl().Obtener(codigo);
-                return lista;
+                return new STDDatos.ExpedienteBl().Obtener(codigo);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
+        }
+
+        public bool AgregarExpediente(ref STDDatos.Expediente pExpediente)
+        {
+            try
+            {
+                return new STDDatos.ExpedienteBl().Agregar(ref pExpediente);
             }
             catch (Exception ex)
             {

@@ -11,50 +11,15 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Evaluacion.ToList();
-                return vResult;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public List<Evaluacion> Obtener(int codigoExpediente)
-        {
-            try
-            {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Evaluacion.Where(t => t.codigoExpediente == codigoExpediente).ToList();
-                return vResult;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public bool Actualizar(Expediente pExpediente)
-        {
-            try
-            {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Expediente.Attach(pExpediente);
-                datos.ObjectStateManager.ChangeObjectState(pExpediente, System.Data.EntityState.Modified);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    var vResult = datos.Evaluacions.ToList();
+                    return vResult;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al listar las evaluaciones.");
             }
         }
     }

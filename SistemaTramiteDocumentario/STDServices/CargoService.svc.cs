@@ -10,12 +10,11 @@ namespace STDServices
 {
     public class CargoService : ICargo
     {
-        public List<STDDatos.Cargo> ObtenerCargo(int codigo)
+        public STDDatos.Cargo ObtenerCargo(int codigo)
         {
             try
             {
-                List<STDDatos.Cargo> lista = new STDDatos.CargoBl().Obtener(codigo);
-                return lista;
+                return new STDDatos.CargoBl().Obtener(codigo);
             }
             catch (Exception ex)
             {
@@ -23,19 +22,24 @@ namespace STDServices
             }
         }
 
-        public bool AgregarCargo(STDDatos.Cargo pCargo)
+        public bool AgregarCargo(ref STDDatos.Cargo pCargo)
         {
-            bool resultado = new STDDatos.CargoBl().Agregar(ref pCargo);
-            return resultado;
+            try
+            {
+                return new STDDatos.CargoBl().Agregar(ref pCargo);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
         }
-
-
+        
         public int ObtenerNuevoCodigo()
         {
             try
             {
-                var lista = new STDDatos.CargoBl().ObtenerValorAutogenerado();
-                return lista;
+                var nuevoCodigo = new STDDatos.CargoBl().ObtenerValorAutogenerado();
+                return nuevoCodigo;
             }
             catch (Exception ex)
             {

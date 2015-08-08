@@ -16,9 +16,7 @@ using System.Runtime.Serialization;
 
 namespace STDDatos
 {
-    //[DataContract(IsReference = true)]
     [DataContract(IsReference = false)]
-    //[DataContract]
     public partial class Evaluacion
     {
         #region Primitive Properties
@@ -29,7 +27,7 @@ namespace STDDatos
             set;
         }
         [DataMember]
-        public virtual string Tramite
+        public virtual Nullable<int> Tramite
         {
             get;
             set;
@@ -41,13 +39,13 @@ namespace STDDatos
             set;
         }
         [DataMember]
-        public virtual string Estado
+        public virtual string Recepcionista
         {
             get;
             set;
         }
         [DataMember]
-        public virtual string Recepcionista
+        public virtual Nullable<int> Estado
         {
             get;
             set;

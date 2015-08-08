@@ -14,11 +14,11 @@ namespace STDRest
         {
             [OperationContract]
             [WebInvoke(Method = "PUT", UriTemplate = "Evaluacion", ResponseFormat = WebMessageFormat.Json)]
-            String Actualizar(STDDatos.Expediente expedienteModificado);
+            STDDatos.Expediente Actualizar(STDDatos.Expediente expedienteModificado);
 
             [OperationContract]
             [WebInvoke(Method = "GET", UriTemplate = "Evaluacion/{codigo}", ResponseFormat = WebMessageFormat.Json)]
-            List<STDDatos.Evaluacion> Obtener(string codigo);
+            Evaluacion Obtener(string codigo);
 
             [OperationContract]
             [WebInvoke(Method = "GET", UriTemplate = "Evaluacion", ResponseFormat = WebMessageFormat.Json)]

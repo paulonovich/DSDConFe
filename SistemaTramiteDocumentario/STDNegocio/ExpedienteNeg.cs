@@ -11,39 +11,31 @@ namespace STDNegocio
     {
         ExpedienteClient cliente = new ExpedienteClient();
 
-        public void AgregarExpediente(Expediente pExpediente, ref String mensaje, ref int codigo)
+        public Expediente ObtenerExpediente(int codigo, ref String mensaje)
+        {
+            try
+            {
+                mensaje = "";
+                return cliente.ObtenerExpediente(codigo);
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+                return null;
+            }
+        }
+
+        public Expediente AgregarExpediente(Expediente pExpediente, ref String mensaje)
         {
             try
             {
                 bool resultado = cliente.AgregarExpediente(ref pExpediente);
-                if (resultado)
-                {
-                    mensaje = "Expediente registrado!";
-                    codigo = pExpediente.codigo;
-                }
-                else
-                {
-                    mensaje = "No se pudo registrar el expediente";
-                    codigo = 0;
-                }
+                mensaje = "Expediente registrado.";
+                return pExpediente;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                mensaje = "No se pudo registrar el expediente.";
-            }
-        }
-
-        public List<Expediente> ObtenerExpediente(int codigo, ref String mensaje)
-        {
-            try
-            {
-                List<Expediente> lista = cliente.ObtenerExpediente(codigo);
-                mensaje = "";
-                return lista;
-            }
-            catch (Exception)
-            {
-                mensaje = "No se pudo obtener la información del expediente.";
+                mensaje = ex.Message;
                 return null;
             }
         }

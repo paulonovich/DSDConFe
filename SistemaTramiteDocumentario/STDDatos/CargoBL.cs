@@ -7,17 +7,22 @@ namespace STDDatos
 {
     public class CargoBl
     {
-        public List<Cargo> Obtener(int codigoCargo)
+        public Cargo Obtener(int codigoCargo)
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Cargo.Where(t => t.codigo == codigoCargo).ToList();
-                return vResult;
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
+                {
+                    var vResult = datos.Cargoes.FirstOrDefault(t => t.codigo == codigoCargo);
+                    if (vResult != null)
+                        return vResult;
+                    else
+                        throw new Exception("No existe el Cargo a buscar");
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al buscar el cargo.");
             }
         }
 
@@ -26,7 +31,7 @@ namespace STDDatos
             try
             {
                 BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Cargo.ToList();
+                var vResult = datos.Cargoes.ToList();
                 var vMax = 0;
 
                 if (vResult.Count>0)
@@ -37,7 +42,7 @@ namespace STDDatos
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al retornar el nuevo código.");
             }
         }
 
@@ -45,21 +50,19 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Cargo.AddObject(pCargo);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    datos.Cargoes.AddObject(pCargo);
+                    var vResult = datos.SaveChanges();
+                    if (vResult > 0)
+                        return true;
+                    else
+                        return false;
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al registrar el cargo.");
             }
         }
     }

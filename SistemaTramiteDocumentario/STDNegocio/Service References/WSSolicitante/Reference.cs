@@ -19,10 +19,10 @@ namespace STDNegocio.WSSolicitante {
         System.Collections.Generic.List<STDDatos.Solicitante> ListarSolicitante();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitante/ObtenerSolicitante", ReplyAction="http://tempuri.org/ISolicitante/ObtenerSolicitanteResponse")]
-        System.Collections.Generic.List<STDDatos.Solicitante> ObtenerSolicitante(int codigo);
+        STDDatos.Solicitante ObtenerSolicitante(int codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitante/AgregarSolicitante", ReplyAction="http://tempuri.org/ISolicitante/AgregarSolicitanteResponse")]
-        string AgregarSolicitante(STDDatos.Solicitante pSolicitante, ref int codigo);
+        bool AgregarSolicitante(ref STDDatos.Solicitante pSolicitante);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -56,12 +56,12 @@ namespace STDNegocio.WSSolicitante {
             return base.Channel.ListarSolicitante();
         }
         
-        public System.Collections.Generic.List<STDDatos.Solicitante> ObtenerSolicitante(int codigo) {
+        public STDDatos.Solicitante ObtenerSolicitante(int codigo) {
             return base.Channel.ObtenerSolicitante(codigo);
         }
         
-        public string AgregarSolicitante(STDDatos.Solicitante pSolicitante, ref int codigo) {
-            return base.Channel.AgregarSolicitante(pSolicitante, ref codigo);
+        public bool AgregarSolicitante(ref STDDatos.Solicitante pSolicitante) {
+            return base.Channel.AgregarSolicitante(ref pSolicitante);
         }
     }
 }

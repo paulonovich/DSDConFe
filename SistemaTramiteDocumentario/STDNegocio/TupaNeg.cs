@@ -10,18 +10,16 @@ namespace STDNegocio
     public class TupaNeg
     {
         TupaClient cliente = new TupaClient();
-
         public List<Tupa> ObtenerTupa(int codigoTramite, ref String mensaje)
         {
             try
             {
-                List<Tupa> lista = cliente.ObtenerTupa(codigoTramite);
                 mensaje = "";
-                return lista;
+                return cliente.ObtenerTupa(codigoTramite);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                mensaje = "No se pudo obtener los requisitos.";
+                mensaje = ex.Message;
                 return null;
             }
         }

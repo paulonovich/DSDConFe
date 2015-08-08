@@ -11,36 +11,16 @@ namespace STDDatos
         {
             try
             {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                var vResult = datos.Tramite.ToList();
-                return vResult;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        
-        public bool Agregar(ref Tramite pTramite)
-        {
-            try
-            {
-                BDDOCUMENTUMEntities datos = new BaseDAO().conexion();
-                datos.Tramite.AddObject(pTramite);
-                var vResult = datos.SaveChanges();
-                if (vResult > 0)
+                using (BDDOCUMENTUMEntities datos = new BaseDAO().conexion())
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    var vResult = datos.Tramites.ToList();
+                    return vResult;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Ocurrio un error al listar los tramites.");
             }
-        }
+        }    
     }
 }
